@@ -414,7 +414,7 @@ function __kobman_check_proxy {
          	sudo echo -e "\n"
          	read -p "Enter AD ID? [eg :ai318974]                 :" uname
          	sudo echo -e "\n"
-         	read  -p "Enter password?[your login password]        : " pword
+         	read -s -p  "Enter password?[your login password]        : " pword
          	sudo echo -e "\n"
          	read -p "Enter email ID?                             :" emil
          	sudo echo -e "\n"
