@@ -5,7 +5,7 @@ sudo figlet help
 sudo figlet command
 
 
-#!/bin/bash
+
 
 #ls -a > list.txt
 if ls -a | grep .kobman
