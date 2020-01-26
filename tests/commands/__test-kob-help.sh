@@ -1,10 +1,18 @@
 #!/bin/bash
-if [ -z "$KOBMAN_DIR" ]; then
-	export KOBMAN_DIR="~/.kobman/"
-fi
+#if [ -z "$KOBMAN_DIR" ]; then
+#	export KOBMAN_DIR="~/.kobman/"
+#fi
 #ls -a > list.txt
+
+#Assigning the path variable
+$KOBMAN_DIR="~/.kobman/"
+
+#Mvoing to home directory
 cd ~/
+
+#Checking if KOBman is already installed, if yes remove and resinstall, if no install
 if ls -a | grep .kobman
+#if .kobman found
 	then
 		sudo figlet REMOVING 
 		sudo figlet KOBMAN 
@@ -13,14 +21,17 @@ if ls -a | grep .kobman
 		sudo figlet KOBMAN 
 		curl -L https://raw.githubusercontent.com/EtricKombat/KOBman/master/get.kobman.io | bash
 		#sudo rm -rv .kobman/src/kobman-help.sh
-		source "/${KOBMAN_DIR}/bin/kobman-init.sh"
+		source "/$KOBMAN_DIR/bin/kobman-init.sh"
+
+#if .kobman not found	
 	else
 		curl -L https://raw.githubusercontent.com/EtricKombat/KOBman/master/get.kobman.io | bash
 		#sudo rm -rv .kobman/src/kobman-help.sh
-		source "/${KOBMAN_DIR}/bin/kobman-init.sh"
+		source "/$KOBMAN_DIR/bin/kobman-init.sh"
 fi
 #kob help > help.txt
 
+#testing help command for pattern matching
 if kob help | grep -x "Usage: kob <command> [environment] 
 
    commands:
@@ -41,10 +52,10 @@ if kob help | grep -x "Usage: kob <command> [environment]
                  eg: $ kob install --dev tobvon hyperledgerkochi
 "
 	then
- 
+#if pattern matched 
 		sudo figlet SUCCESS 
 
-
+#if pattern doesnt match
 	else
 		sudo figlet FAIL 
 
