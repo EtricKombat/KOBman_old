@@ -34,6 +34,8 @@ function kob {
 			COMMAND="status";;
 		p)
 			COMMAND="proxy";;
+		t)
+			COMMAND="test";;
 	esac
 
 	#
@@ -54,6 +56,11 @@ function kob {
 #
 #	# ...unless proven otherwise
 #	__kobman_update_broadcast_and_service_availability
+
+
+
+
+
 #
 	# Load the kobman config if it exists.
 	if [ -f "${KOBMAN_DIR}/etc/config" ]; then
@@ -78,6 +85,20 @@ function kob {
 	if [[ -f "$CMD_TARGET" ]]; then
 		CMD_FOUND="$CMD_TARGET"
 	fi 
+
+	
+	#checking of test command
+	if [ $COMMAND = "test"];then
+		#checking for testscript file in test directory.
+		CMD_TARGET="${KOBMAN_DIR}/tests/commands/kobman-${DEPLOYMENT_TYPE}.sh"
+		if [[ -f "$CMD_TARGET" ]]; then
+			cd ~/.kobman/tests/commands
+			chmod 755 test-kob-${DEPLOYMENT_TYPE}.sh
+			./test-kob-${DEPLOYMENT_TYPE}.sh
+			return 1
+		fi
+	fi 
+
 	# couldn't find the command
 	if [[ -z "$CMD_FOUND" ]]; then
 		echo "Invalid command: $COMMAND"
@@ -287,7 +308,6 @@ function kob {
 
 	# Store the return code of the requested command
 	local final_rc=0
-
 	# Execute the requested command
 	if [ -n "$CMD_FOUND" ]; then
 		# It's available as a shell function
