@@ -2,7 +2,7 @@
 
 #Assigning the path variable
 $KOBMAN_DIR="~/.kobman/"
-
+_kob_candidate_folder=${KOBMAN_DIR}/candidates
 #Mvoing to home directory
 cd ~/
 # creating a new variable to check the status of the installation
@@ -62,8 +62,8 @@ envi="greenlight von-network TheOrgBook"
 
 	echo "===================REMOVING all envirornments==================="
 	#sudo su
-	if [ -z "$(ls -A ~/.kobman/candidates/)" ]; then
-   		cd ~/.kobman/candidates/
+	if [ -z "$(ls -A $_kob_candidate_folder)" ]; then
+   		cd $_kob_candidate_folder
 		sudo rm -R *
 	fi
 echo "===================installing tobvon==================="
@@ -85,7 +85,7 @@ echo "===================installing kobregistory ==================="
 	for i in $envi
 	do
 	#sudo su
-	cd ~/.kobman/candidates/
+	cd $_kob_candidate_folder
 	if [ -d "${i}" ];then
 		echo "====================== $i exist ======================"
 	else 
