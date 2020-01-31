@@ -7,7 +7,7 @@ $KOBMAN_DIR="~/.kobman/"
 cd ~/
 # creating a new variable to check the status of the installation
 check="true"
-KOB_install()
+__KOB__install()
 {	echo "=========================Installing KOBMAN ========================= "
 	curl -L https://raw.githubusercontent.com/EtricKombat/KOBman/master/get.kobman.io | bash
 	source "/$KOBMAN_DIR/bin/kobman-init.sh"
@@ -45,9 +45,9 @@ if ls -a | grep .kobman
 		echo "=========================REMOVING KOBMAN========================= "
 		
 		sudo rm -rv .kobman
-		KOB_install			
+		__KOB__install			
 	else
-		KOB_install
+		__KOB__install
 fi
 
 	#checking for the kobman is fully installed or not.
@@ -57,4 +57,41 @@ fi
         else
                 echo "=========================Installation Sucessful========================="
 fi
+#directory="~/.kobman/candidates/"
+envi="greenlight von-network TheOrgBook"
+
+	echo "===================REMOVING all envirornments==================="
+	#sudo su
+	if [ -z "$(ls -A ~/.kobman/candidates/)" ]; then
+   		cd ~/.kobman/candidates/
+		sudo rm -R *
+	fi
+echo "===================installing tobvon==================="
+	kob install --dev tobvon       
+echo "===================installing tob==================="
+	kob install --dev tob
+echo "===================installing Greenloght==================="
+	kob install --dev greenlight
+echo "===================installing kobvon==================="
+	kob install --dev kobvon
+echo "===================installing kob==================="
+	kob install --dev kob
+echo "===================installing kobflow==================="
+	kob install --dev kobdflow
+echo "===================installing kobconnect==================="
+	kob install --dev kobconnect
+echo "===================installing kobregistory ==================="
+	kob install --dev kobregistory
+	for i in $envi
+	do
+	#sudo su
+	cd ~/.kobman/candidates/
+	if [ -d "${i}" ];then
+		echo "====================== $i exist ======================"
+	else 
+	    echo "====================== $i does not exist ======================"
+					
+	fi
+	done
+
 exit
