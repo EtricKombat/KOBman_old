@@ -6,7 +6,7 @@ function kob {
 	COMMAND="$1"
 	QUALIFIER="$2"
 	THREE="$3"
-	NAME_SPACE=${4:-hyperledgerkochi}
+	NAME_SPACE=${4:-asa1997}
 	case "$COMMAND" in
 		l)
 			COMMAND="list";;
