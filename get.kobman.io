@@ -7,7 +7,7 @@
 KOBMAN_VERSION="5.7.4+362"
 KOBMAN_PLATFORM=$(uname)
 KOBMAN_SERVICE="https://raw.githubusercontent.com"
-# KOBMAN_NAMESPACE="EtricKombat"
+KOBMAN_NAMESPACE="asa1997"
 
 
 
@@ -61,7 +61,7 @@ esac
 sudo apt install figlet -y
 
 figlet KOB-Setup ...
-figlet asa1997 repo 
+figlet ${KOBMAN_NAMESPACE} repo 
 
 # Sanity checks
 
@@ -169,7 +169,7 @@ mkdir -p "$kobman_archives_folder"
 mkdir -p "$kobman_candidates_folder"
 
 echo "Getting available candidates..."
-KOBMAN_CANDIDATES_CSV=$(curl -s "${KOBMAN_SERVICE}/asa1997/KOBman/master/all")
+KOBMAN_CANDIDATES_CSV=$(curl -s "${KOBMAN_SERVICE}/${KOBMAN_NAMESPACE}/KOBman/master/all")
 echo "$KOBMAN_CANDIDATES_CSV" > "${KOBMAN_DIR}/var/candidates"
 
 echo "Prime the config file..."
@@ -185,7 +185,7 @@ echo "kobman_colour_enable=true" >> "$kobman_config_file"
 
 echo "Download script archive..."
 
-curl --location --progress-bar "${KOBMAN_SERVICE}/asa1997/KOBman/master/kobman_zip_file.zip" > "$kobman_zip_file"
+curl --location --progress-bar "${KOBMAN_SERVICE}/${KOBMAN_NAMESPACE}/KOBman/master/kobman_zip_file.zip" > "$kobman_zip_file"
 
 ARCHIVE_OK=$(unzip -qt "$kobman_zip_file" | grep 'No errors detected in compressed data')
 if [[ -z "$ARCHIVE_OK" ]]; then
