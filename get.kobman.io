@@ -194,7 +194,7 @@ if [[ -z "$ARCHIVE_OK" ]]; then
 	echo "If problems persist, please ask for help on our Github:"
 	echo "* easy sign up: https://github.com/"
 	echo "https://github.com/asa1997/KOBman/issues"
-	rm -rf "$KOBMAN_DIR"
+	#rm -rf "$KOBMAN_DIR"
 	exit 2
 fi
 
