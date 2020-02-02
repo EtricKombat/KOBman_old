@@ -186,7 +186,7 @@ echo "kobman_colour_enable=true" >> "$kobman_config_file"
 echo "Download script archive..."
 
 curl --location --progress-bar "${KOBMAN_SERVICE}/${KOBMAN_NAMESPACE}/KOBman/master/kobman_zip_file.zip" > "$kobman_zip_file"
-
+echo "UNZIPPING THE FILE"
 ARCHIVE_OK=$(unzip -qt "$kobman_zip_file" | grep 'No errors detected in compressed data')
 if [[ -z "$ARCHIVE_OK" ]]; then
 	echo "Downloaded zip archive corrupt. Are you connected to the internet?"
