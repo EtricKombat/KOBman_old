@@ -2,9 +2,10 @@
 #!/bin/bash
 
 #Install: stable
+sudo dpkg --configure -a
 
 # Global variables
-KOBMAN_VERSION="5.7.4+362"
+KOBMAN_VERSION="0.01"
 KOBMAN_PLATFORM=$(uname)
 KOBMAN_SERVICE="https://raw.githubusercontent.com"
 KOBMAN_NAMESPACE="asa1997"
