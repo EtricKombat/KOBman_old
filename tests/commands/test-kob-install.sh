@@ -2,7 +2,7 @@
 
 #Assigning the path variable
 $KOBMAN_DIR="~/.kobman/"
-_kob_candidate_folder=${KOBMAN_DIR}/candidates
+_kob_candidate_folder=${KOBMAN_DIR}/candidates # pointouts to the candidates folder
 #Mvoing to home directory
 cd ~/
 # creating a new variable to check the status of the installation
@@ -32,9 +32,10 @@ __KOB__install()
 	#checking for kobman-init.sh file.
 	FILE=~/.kobman/bin/kobman-init.sh
 	if [ -f "$FILE" ]; then
-		    echo "$FILE exist"
+		    figlet "$FILE exist"
 		else 
-		    echo "$FILE does not exist"
+		    figlet "$FILE 
+		    	does not exist"
 			check="false"			
 		fi
 }
@@ -57,11 +58,11 @@ fi
         else
                 echo "=========================Installation Sucessful========================="
 fi
-#directory="~/.kobman/candidates/"
+# variable which contains all the envirornment names that a user can install.
 envi="greenlight von-network TheOrgBook"
 
 	echo "===================REMOVING all envirornments==================="
-	#sudo su
+	# removing all the existed envirornments installed in system.
 	if [ -z "$(ls -A $_kob_candidate_folder)" ]; then
    		cd $_kob_candidate_folder
 		sudo rm -R *
@@ -82,14 +83,18 @@ echo "===================installing kobconnect==================="
 	kob install --dev kobconnect
 echo "===================installing kobregistory ==================="
 	kob install --dev kobregistory
+	
+	# checking for the envirornments are sucesfully installed or not.
 	for i in $envi
 	do
 	#sudo su
 	cd $_kob_candidate_folder
 	if [ -d "${i}" ];then
-		echo "====================== $i exist ======================"
+		echo "======================exist ======================"
+		figlet $i
 	else 
-	    echo "====================== $i does not exist ======================"
+	    echo "====================== does not exist ======================"
+	    figlet $i
 					
 	fi
 	done
