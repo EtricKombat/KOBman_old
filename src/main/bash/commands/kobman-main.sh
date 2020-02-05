@@ -36,6 +36,8 @@ function kob {
 			COMMAND="proxy";;
 		t)
 			COMMAND="test";;
+		a)
+			COMMAND="all";;
 	esac
 
 	#
@@ -92,12 +94,24 @@ function kob {
 		#checking for testscript file in test directory.
 		CMD_TARGET="${KOBMAN_DIR}/tests/commands/kobman-${DEPLOYMENT_TYPE}.sh"
 		if [[ -f "$CMD_TARGET" ]]; then
+			$CMD_FOUND="true"
 			cd ~/.kobman/tests/commands
 			chmod 755 test-kob-${DEPLOYMENT_TYPE}.sh
 			./test-kob-${DEPLOYMENT_TYPE}.sh
-			return 1
+			
 		fi
 	fi 
+	
+
+
+	if [[ $COMMAND = "all" ]]; then
+		$CMD_FOUND="true"
+	kob install --dev tobvon
+	kob install --dev tob
+	kob install --dev greenlight
+	fi
+	
+
 
 	# couldn't find the command
 	if [[ -z "$CMD_FOUND" ]]; then
@@ -310,9 +324,11 @@ function kob {
 	local final_rc=0
 	# Execute the requested command
 	if [ -n "$CMD_FOUND" ]; then
+		if [${CMD_FOUND} != "true"];then
 		# It's available as a shell function
 		__kob_"$CONVERTED_CMD_NAME" "$DEPLOYMENT_TYPE" "$3" "$4"
 		final_rc=$?
+		fi
 	fi
 
 #	# Attempt upgrade after all is done
