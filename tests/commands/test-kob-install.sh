@@ -61,12 +61,6 @@ fi
 # variable which contains all the envirornment names that a user can install.
 envi="greenlight von-network TheOrgBook"
 
-	echo "===================REMOVING all envirornments==================="
-	# removing all the existed envirornments installed in system.
-	if [ -z "$(ls -A $_kob_candidate_folder)" ]; then
-   		cd $_kob_candidate_folder
-		sudo rm -R *
-	fi
 echo "===================installing tobvon==================="
 	kob install --dev tobvon       
 echo "===================installing tob==================="
