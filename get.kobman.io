@@ -6,7 +6,7 @@
 KOBMAN_VERSION="0.01"
 KOBMAN_PLATFORM=$(uname)
 KOBMAN_SERVICE="https://raw.githubusercontent.com"
-KOBMAN_NAMESPACE="EtricKombat"
+KOBMAN_NAMESPACE="TEJAlions"
 
 
 
