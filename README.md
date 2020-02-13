@@ -116,10 +116,11 @@ e.g.
 
 To Tick an Issue type [X]
 
+<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/Write.PNG"/>
 
+To Untick an Issue type [ ]
 
-
-
+<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/Preview.PNG"/>
 
 ## Contributors
 
