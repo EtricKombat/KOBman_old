@@ -106,7 +106,7 @@ Below are the steps to report an issue
 
 To Tick an issue
 
-<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/select.PNG" width="80"/>
+<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/select.PNG" width="100"/>
 
 To Untick an issue
 
