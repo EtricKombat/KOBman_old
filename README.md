@@ -102,7 +102,7 @@ For new features creation , you have to edit (add file 'kobman-\*' ) extention s
 
 ## Report an Issue
 
-Tick the issue you are facing 
+Tick the issue you are facing provide description if needed and then click on Submit Issue
 
 To Tick an issue
 
