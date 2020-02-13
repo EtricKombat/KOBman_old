@@ -110,6 +110,8 @@ To Tick an issue
 
 To Untick an issue
 
+<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/unselect.PNG" width="100"/>
+
 e.g.
 
 
