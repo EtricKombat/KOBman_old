@@ -104,12 +104,11 @@ For new features creation , you have to edit (add file 'kobman-\*' ) extention s
 
 Below are the steps to report an issue
 
-To Tick an issue.
+To Tick an issue
 
-<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/select.PNG">
+<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/select.PNG" width="80"/>
 
-To Untick an issue.
-<img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/unselect.PNG">
+To Untick an issue
 
 e.g.
 
