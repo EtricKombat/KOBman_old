@@ -114,6 +114,9 @@ To Untick an issue
 
 e.g.
 
+To Tick an Issue type [X]
+
+
 
 
 
