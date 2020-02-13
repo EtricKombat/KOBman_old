@@ -114,11 +114,11 @@ To Untick an issue
 
 e.g.
 
-Select the issue 
+Select the issue by typing [X]
 
 <img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/Write.PNG"/>
 
-Check and confirm then click on Submit Issue
+Click on preview, Check and confirm then click on Submit Issue
 
 <img src="https://github.com/NareshSangayya/KOBman/blob/master/docs/Images/Preview.PNG"/>
 
