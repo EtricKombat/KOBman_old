@@ -100,6 +100,12 @@ For new features creation , you have to edit (add file 'kobman-\*' ) extention s
 
         ./kobman/env/
 
+## Report an Issue
+
+Below are the steps to report an issue
+
+
+
 ## Contributors
 
 This project exists thanks to all the people who contribute. 
