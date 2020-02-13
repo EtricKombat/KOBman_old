@@ -104,6 +104,12 @@ For new features creation , you have to edit (add file 'kobman-\*' ) extention s
 
 Below are the steps to report an issue
 
+To Tick an issue
+
+<img src="Images/select.PNG">
+
+To Untick an issue
+<img src="Images/unselect.PNG">
 
 
 ## Contributors
