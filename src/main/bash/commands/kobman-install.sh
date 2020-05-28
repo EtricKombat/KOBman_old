@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 confirmed_environment=""
-
+## use __kob_*** for all function names.
 function __kob_install {
 
 	environment_value=$1
@@ -9,7 +9,7 @@ function __kob_install {
 	namespace_value=$3 
 	__kobman_create_environment_directory "$environment_value" "$version_value" "$namespace_value" 
 }
-
+## Could change the name to __kob_validate_environment.
 function __kobman_validate_set_environment
 {
 	echo $1 > $KOBMAN_DIR/var/current	
@@ -55,7 +55,7 @@ function __kobman_validate_version_format
 	__kobman_echo_no_colour "$1" | grep -w '[0-9]*\.[0-9]*\.[0-9]*' > /dev/null
 
 }
-
+## could change the name to __kob_check_if_version_exists.
 function __kobman_check_for_existing_version
 {
 	env=$1
@@ -70,11 +70,12 @@ function __kobman_check_for_existing_version
 function __kobman_environment_name_align
 {
 
-	
-      	case "$env" in 
-		tob)
-			confirmed_environment="TheOrgBook"		
-		;;
+	## Check if case can be changed to if conditions.		#if [[ $env == "tob" ]]; then
+									#	confirmed_environment="TheOrgBook"	
+      	case "$env" in 							#fi
+		tob)							#if [[ $env == "tobovn" ]]; then
+			confirmed_environment="TheOrgBook"		#	confirmed_environment="von-network"
+	;;								#fi
 		tobvon)
 			confirmed_environment="von-network"		
 		;;
