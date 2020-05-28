@@ -63,7 +63,14 @@ function __kobman_check_for_existing_version
 	namespace=$3	
 	__kobman_environment_name_align "$env"
 
-	git ls-remote --tags "https://github.com/${namespace}/${confirmed_environment}" | grep -w 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*' | sort -r | head | grep -o '[^\/]*$' | grep -w "${version}" > /dev/null
+	curl -sL "https://raw.githubusercontent.com/${namespace}/${confirmed_environment}/dev/dist/list.txt" | grep -iw '${confirmed_environment},[0-9]*\.[0-9]*\.[0-9]*' | sed -e $'s:,:\\\n:g' | sort -n | paste -sd ',' - | sed 's:,:, :g' | grep -w "${version},"
+
+echo "NameSpace		: " ${namespace}
+echo "environment	: " ${confirmed_environment}
+echo "Version 		: " ${version}
+
+# v.2 - curl -sL "https://raw.githubusercontent.com/${namespace}/${confirmed_environment}/${KOBMAN_DIST_BRANCH}/dist/list.txt" | grep -iw '${confirmed_environment},[0-9]*\.[0-9]*\.[0-9]*' | sed -e $'s:,:\\\n:g' | sort -n | paste -sd ',' - | sed 's:,:, :g' | grep -w "${version},"
+#	git ls-remote --tags "https://github.com/${namespace}/${confirmed_environment}" | grep -w 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*' | sort -r | head | grep -o '[^\/]*$' | grep -w "${version}" > /dev/null
 							# version check is happening only for KOBman , need to create case statement for mapping kobman environemnts 
 }
 
