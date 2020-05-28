@@ -57,6 +57,7 @@ function kob {
 	fi 
 	# couldn't find the command
 	if [[ -z "$CMD_FOUND" ]]; then
+		## Use __kobman_echo_debug for printing error messages.
 		echo "Invalid command: $COMMAND"
 		__kob_help
 	fi
@@ -84,16 +85,18 @@ function kob {
 	fi
 
 }
-
+## Change all function names to __kob_*** . Instead of __kobman_***
 function __kobman_identify_parameter
 {
 
 	if [ -z "${argument_[1]}" ];
-	then
+	then	
+		## use __kobman_echo_debug 
 		__kobman_echo_red "Invalid command : Try with --environment/-env "
         	return  
 	elif [ "${argument_[1]}" == "--environment" ] || [ "${argument_[1]}" == "-env"  ];  
         then    
+		## __kob_validate_environment
 		__kobman_validate_set_environment "${argument_[2]}"
                 if [ "$?" -eq "0" ]   
                 then
@@ -122,6 +125,7 @@ function __kobman_identify_parameter
 
 			esac  
                 else
+			# Use __kobman_echo_debug 
                         __kobman_echo_red "Environment name you have entered is not available, please try again!"
                 return  
                 fi
@@ -129,7 +133,7 @@ function __kobman_identify_parameter
         fi
 }
 
-
+# Could use a better name for the function. Current name doesnt convey the purpose of the function.
 function __kobman_pass_parameter
 {
 	__kobman_setting_global_variables "$1" "$2" "$3" 
