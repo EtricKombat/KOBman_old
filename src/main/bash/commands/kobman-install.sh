@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 confirmed_environment=""
-
+## use __kob_*** for all function names.
 function __kob_install {
 
 	environment_value=$1
@@ -9,10 +9,11 @@ function __kob_install {
 	namespace_value=$3 
 	__kobman_create_environment_directory "$environment_value" "$version_value" "$namespace_value" 
 }
-
+## Could change the name to __kob_validate_environment.
 function __kobman_validate_set_environment
 {
 	echo $1 > $KOBMAN_DIR/var/current	
+	## Might want to change to list.txt instead of list. Check and confirm
 	curl -sL "https://raw.githubusercontent.com/${KOBMAN_NAMESPACE}/KOBman/master/dist/list" | grep -i "$1" > /dev/null
 }
 
@@ -55,7 +56,7 @@ function __kobman_validate_version_format
 	__kobman_echo_no_colour "$1" | grep -w '[0-9]*\.[0-9]*\.[0-9]*' > /dev/null
 
 }
-
+## could change the name to __kob_check_if_version_exists.
 function __kobman_check_for_existing_version
 {
 	env=$1
@@ -63,25 +64,19 @@ function __kobman_check_for_existing_version
 	namespace=$3	
 	__kobman_environment_name_align "$env"
 
-	curl -sL "https://raw.githubusercontent.com/${namespace}/${confirmed_environment}/dev/dist/list.txt" | grep -iw '${confirmed_environment},[0-9]*\.[0-9]*\.[0-9]*' | sed -e $'s:,:\\\n:g' | sort -n | paste -sd ',' - | sed 's:,:, :g' | grep -w "${version},"
-
-echo "NameSpace		: " ${namespace}
-echo "environment	: " ${confirmed_environment}
-echo "Version 		: " ${version}
-
-# v.2 - curl -sL "https://raw.githubusercontent.com/${namespace}/${confirmed_environment}/${KOBMAN_DIST_BRANCH}/dist/list.txt" | grep -iw '${confirmed_environment},[0-9]*\.[0-9]*\.[0-9]*' | sed -e $'s:,:\\\n:g' | sort -n | paste -sd ',' - | sed 's:,:, :g' | grep -w "${version},"
-#	git ls-remote --tags "https://github.com/${namespace}/${confirmed_environment}" | grep -w 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*' | sort -r | head | grep -o '[^\/]*$' | grep -w "${version}" > /dev/null
+	git ls-remote --tags "https://github.com/${namespace}/${confirmed_environment}" | grep -w 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*' | sort -r | head | grep -o '[^\/]*$' | grep -w "${version}" > /dev/null
 							# version check is happening only for KOBman , need to create case statement for mapping kobman environemnts 
 }
 
 function __kobman_environment_name_align
 {
 
-	
-      	case "$env" in 
-		tob)
-			confirmed_environment="TheOrgBook"		
-		;;
+	## Check if case can be changed to if conditions.		#if [[ $env == "tob" ]]; then
+									#	confirmed_environment="TheOrgBook"	
+      	case "$env" in 							#fi
+		tob)							#if [[ $env == "tobovn" ]]; then
+			confirmed_environment="TheOrgBook"		#	confirmed_environment="von-network"
+	;;								#fi
 		tobvon)
 			confirmed_environment="von-network"		
 		;;
