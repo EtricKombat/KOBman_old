@@ -42,8 +42,3 @@ git push origin -f $dist_branch
 
 #checkout back to master
 git checkout Demo_hyperledgerkochi 
-
-
-
-
-

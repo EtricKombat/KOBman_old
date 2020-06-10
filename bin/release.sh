@@ -23,16 +23,16 @@ if [[ -z $KOB_NAMESPACE ]];
 fi
 
 # prepare branch
-cd ~/KOBman
+cd ~/Documents/KOBman
 git checkout Demo_hyperledgerkochi 
 git branch -D $branch
 git checkout -b $branch
 
 
 #copy the tmpl file to /scripts 
-cp ~/KOBman/scripts/tmpl/*.tmpl ~/KOBman/scripts/
+cp ~/Documents/KOBman/scripts/tmpl/*.tmpl ~/Documents/KOBman/scripts/
 # replacing @xxx@ variables with acutal values. 
-for file in ~/KOBman/scripts/get.kobman.io.tmpl;
+for file in ~/Documents/KOBman/scripts/get.kobman.io.tmpl;
 do
     sed -i "s/@KOB_VERSION@/$kob_version/g" $file
     sed -i "s/@KOB_ARCHIVE_DOWNLOAD_REPO@/$KOB_ARCHIVE_DOWNLOAD_REPO/g" $file
@@ -42,7 +42,7 @@ do
 done
 
 # committing the changes
-git add ~/KOBman/scripts/*.*
+git add ~/Documents/KOBman/scripts/*.*
 git commit -m "Update version of $branch to $kob_version"
 
 #push release branch
@@ -53,5 +53,5 @@ git tag -a $kob_version -m "Releasing version $kob_version"
 git push origin $kob_version
 
 #checkout to dev
-git checkout master
+git checkout Demo_hyperledgerkochi 
 
