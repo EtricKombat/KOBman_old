@@ -19,12 +19,16 @@ fi
 
 if [[ -z $KOBMAN_NAMESPACE ]];
     then
+<<<<<<< HEAD
          KOBMAN_NAMESPACE={KOBMAN_NAMESPACE:-hyperledgerkochi}
+=======
+        KOBMAN_NAMESPACE={KOBMAN_NAMESPACE:-hyperledgerkochi}
+>>>>>>> a68d0a983a8a65c5315d27a3aa7cbe06c6d6f1f7
 fi
 
 # prepare branch
 cd ~/KOBman
-git checkout master
+git checkout Demo_hyperledgerkochi_2
 git branch -D $branch
 git checkout -b $branch
 
@@ -52,6 +56,11 @@ git push -f -u origin $branch
 git tag -a $kob_version -m "Releasing version $kob_version"
 git push origin $kob_version
 
+<<<<<<< HEAD
 #checkout to master
 git checkout master
+=======
+#checkout to dev
+git checkout Demo_hyperledgerkochi_2
+>>>>>>> a68d0a983a8a65c5315d27a3aa7cbe06c6d6f1f7
 
