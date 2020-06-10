@@ -25,7 +25,7 @@ zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src
 cp ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/build/tmp/kobman-$kob_rel_version.zip
 
 # moving get.kobman.io to tmp/
-mv ~/KOBman/scripts/get.kobman.io build/tmp/
+mv ~/KOBman/scripts/get.kobman.io ~/KOBman/build/tmp/
 
 # moving into dist branch
 git checkout $dist_branch
@@ -35,7 +35,7 @@ git checkout $branch -- ~/KOBman/build/tmp/* &> /dev/null
 
 mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
-mv build/tmp/* dist/
+mv ~/KOBman/build/tmp/* ~/KOBman/dist/
 
 # saving changes and pushing
 git add dist/*
@@ -44,8 +44,3 @@ git push origin -f $dist_branch
 
 #checkout back to master
 git checkout Demo_hyperledgerkochi_2
-
-
-
-
-
