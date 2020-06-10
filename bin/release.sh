@@ -30,7 +30,7 @@ git checkout -b $branch
 
 
 #copy the tmpl file to /scripts 
-cp ~/KOBman/scripts/tmpl/*.tmpl ~/KOBman/scripts/
+cp ~/KOBman/scripts/tmpl/get.kobman.io.tmpl ~/KOBman/scripts/
 # replacing @xxx@ variables with acutal values. 
 for file in ~/KOBman/scripts/get.kobman.io.tmpl;
 do
