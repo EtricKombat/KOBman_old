@@ -20,8 +20,9 @@ mkdir -p build/tmp
 
 # making of zip files
 zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src/main/bash/kobman-* ~/KOBman/src/main/bash/envs/kobman-* ~/KOBman/src/main/bash/commands/kobman-*
+
 #zip -r build/tmp/kobman-latest.zip ~/KOBman/src/
-cp build/tmp/kobman-latest.zip build/tmp/kobman-$kob_rel_version.zip
+cp ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/build/tmp/kobman-$kob_rel_version.zip
 
 # moving get.kobman.io to tmp/
 mv ~/KOBman/scripts/get.kobman.io build/tmp/
