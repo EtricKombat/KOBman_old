@@ -24,7 +24,7 @@ fi
 
 # prepare branch
 cd ~/KOBman
-git checkout master
+git checkout Demo_hyperledgerkochi 
 git branch -D $branch
 git checkout -b $branch
 
