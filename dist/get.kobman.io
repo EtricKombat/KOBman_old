@@ -6,10 +6,10 @@
 # Global variables
 KOBMAN_PLATFORM=$(uname)
 export KOBMAN_SERVICE="https://raw.githubusercontent.com"
-<<<<<<< HEAD
-export KOBMAN_NAMESPACE="asa1997"
-=======
->>>>>>> 00e0796725f9e5547fc33d1f366066c5069f501d
+
+export KOBMAN_NAMESPACE="KOBMAN_NAMESPACE"
+
+
 
 
 if [ -z "$KOBMAN_DIR" ]; then
