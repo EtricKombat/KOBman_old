@@ -32,7 +32,7 @@ git checkout -b $branch
 #copy the tmpl file to /scripts 
 cp ~/KOBman/scripts/tmpl/*.tmpl ~/KOBman/scripts/
 # replacing @xxx@ variables with acutal values. 
-for file in ~/KOBman/scripts/*.tmpl;
+for file in ~/KOBman/scripts/get.kobman.io.tmpl;
 do
     sed -i "s/@KOB_VERSION@/$kob_version/g" $file
     sed -i "s/@KOB_ARCHIVE_DOWNLOAD_REPO@/$KOB_ARCHIVE_DOWNLOAD_REPO/g" $file
