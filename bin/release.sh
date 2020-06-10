@@ -17,14 +17,14 @@ if [[ -z $KOB_ARCHIVE_DOWNLOAD_REPO ]];
         KOB_ARCHIVE_DOWNLOAD_REPO={KOB_ARCHIVE_DOWNLOAD_REPO:-KOBman}
 fi
 
-if [[ -z $KOB_NAMESPACE ]];
+if [[ -z $KOBMAN_NAMESPACE ]];
     then
-        KOB_NAMESPACE={KOB_NAMESPACE:-hyperledgerkochi}
+        KOBMAN_NAMESPACE={KOBMAN_NAMESPACE:-hyperledgerkochi}
 fi
 
 # prepare branch
 cd ~/KOBman
-git checkout master
+git checkout Demo_hyperledgerkochi_2
 git branch -D $branch
 git checkout -b $branch
 
@@ -36,7 +36,7 @@ for file in ~/KOBman/scripts/*.tmpl;
 do
     sed -i "s/@KOB_VERSION@/$kob_version/g" $file
     sed -i "s/@KOB_ARCHIVE_DOWNLOAD_REPO@/$KOB_ARCHIVE_DOWNLOAD_REPO/g" $file
-    sed -i "s/@KOB_NAMESPACE@/$KOB_NAMESPACE/g" $file
+    sed -i "s/@KOB_NAMESPACE@/$KOBMAN_NAMESPACE/g" $file
     # renaming to remove .tmpl extension
     mv "$file" "${file//.tmpl/}"
 done
@@ -53,5 +53,5 @@ git tag -a $kob_version -m "Releasing version $kob_version"
 git push origin $kob_version
 
 #checkout to dev
-git checkout master
+git checkout Demo_hyperledgerkochi_2
 
