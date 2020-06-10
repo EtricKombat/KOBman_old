@@ -19,7 +19,8 @@ git checkout $branch
 mkdir -p build/tmp
 
 # making of zip files
-zip -r build/tmp/kobman-latest.zip ~/KOBman/src/
+zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src/main/bash/kobman-* ~/KOBman/src/main/bash/envs/kobman-* ~/KOBman/src/main/bash/commands/kobman-*
+#zip -r build/tmp/kobman-latest.zip ~/KOBman/src/
 cp build/tmp/kobman-latest.zip build/tmp/kobman-$kob_rel_version.zip
 
 # moving get.kobman.io to tmp/
