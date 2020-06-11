@@ -26,13 +26,14 @@ zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src
 cp ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/build/tmp/kobman-$kob_rel_version.zip
 
 # moving get.kobman.io to tmp/
-#mv ~/KOBman/scripts/get.kobman.io ~/KOBman/build/tmp/
-exit
+mv ~/KOBman/scripts/get.kobman.io ~/KOBman/build/tmp/
+
 # moving into dist branch
 git checkout $dist_branch
 
 # collecting files from Release branch tmp/ folder to dist branch
 git checkout $branch -- ~/KOBman/build/tmp/* &> /dev/null
+exit
 
 mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
