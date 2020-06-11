@@ -5,10 +5,10 @@ branch="Release"
 dist_branch="dist"
 
 #sanity
-if [[ -z "$kob_rel_version" ]]; then
-	echo "Usage: dopublish.sh <version>"
-	exit 0
-fi
+#if [[ -z "$kob_rel_version" ]]; then
+#	echo "Usage: dopublish.sh <version>"
+#	exit 0
+#fi
 
 #Checkout latest tag
 # git checkout tags/$kob_rel_version -b $kob_rel_version
@@ -19,14 +19,15 @@ git checkout $branch
 mkdir -p build/tmp
 
 # making of zip files
+
 zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src/main/bash/kobman-* ~/KOBman/src/main/bash/envs/kobman-* ~/KOBman/src/main/bash/commands/kobman-*
 
 #zip -r build/tmp/kobman-latest.zip ~/KOBman/src/
 cp ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/build/tmp/kobman-$kob_rel_version.zip
 
 # moving get.kobman.io to tmp/
-mv ~/KOBman/scripts/get.kobman.io ~/KOBman/build/tmp/
-
+#mv ~/KOBman/scripts/get.kobman.io ~/KOBman/build/tmp/
+exit
 # moving into dist branch
 git checkout $dist_branch
 
