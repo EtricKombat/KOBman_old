@@ -5,10 +5,10 @@ branch="Release"
 dist_branch="dist"
 
 #sanity
-#if [[ -z "$kob_rel_version" ]]; then
-#	echo "Usage: dopublish.sh <version>"
-#	exit 0
-#fi
+if [[ -z "$kob_rel_version" ]]; then
+	echo "Usage: dopublish.sh <version>"
+	exit 0
+fi
 
 #Checkout latest tag
 # git checkout tags/$kob_rel_version -b $kob_rel_version
@@ -33,12 +33,12 @@ git checkout $dist_branch
 
 # collecting files from Release branch tmp/ folder to dist branch
 git checkout $branch -- ~/KOBman/build/tmp/* &> /dev/null
-exit
 
 mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
 mv ~/KOBman/build/tmp/* ~/KOBman/dist/
-
+ls -l ~/KOBman/dist/
+exit
 # saving changes and pushing
 git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
