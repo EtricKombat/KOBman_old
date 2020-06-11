@@ -19,6 +19,7 @@ git checkout $branch
 mkdir -p build/tmp
 
 # making of zip files
+
 zip -rj ~/KOBman/build/tmp/kobman-latest.zip ~/KOBman/dist/list.txt ~/KOBman/src/main/bash/kobman-* ~/KOBman/src/main/bash/envs/kobman-* ~/KOBman/src/main/bash/commands/kobman-*
 
 #zip -r build/tmp/kobman-latest.zip ~/KOBman/src/
@@ -37,6 +38,7 @@ mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
 mv ~/KOBman/build/tmp/* ~/KOBman/dist/
 
+ls -l ~/KOBman/dist/
 # saving changes and pushing
 git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
