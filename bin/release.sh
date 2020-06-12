@@ -53,9 +53,5 @@ git tag -a $kob_version -m "Releasing version $kob_version"
 git push origin $kob_version
 
 #checkout to dev
-<<<<<<< HEAD
 git checkout release_process
 
-=======
-git checkout master
->>>>>>> b2cee96ce5cb5299854fd6e2a9b7e354970a32bd

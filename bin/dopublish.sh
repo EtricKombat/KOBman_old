@@ -38,19 +38,11 @@ mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
 mv ~/KOBman/build/tmp/* ~/KOBman/dist/
 
-<<<<<<< HEAD
-ls -l ~/KOBman/dist/
-=======
 # ls -l ~/KOBman/dist/
->>>>>>> b2cee96ce5cb5299854fd6e2a9b7e354970a32bd
 # saving changes and pushing
 git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
 git push origin -f $dist_branch
 
 #checkout back to master
-<<<<<<< HEAD
 git checkout release_process
-=======
-git checkout master
->>>>>>> b2cee96ce5cb5299854fd6e2a9b7e354970a32bd
