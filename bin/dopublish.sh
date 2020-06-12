@@ -38,7 +38,7 @@ mkdir dist &> /dev/null
 # moving of latest files from tmp/ to dist/
 mv ~/KOBman/build/tmp/* ~/KOBman/dist/
 
-ls -l ~/KOBman/dist/
+# ls -l ~/KOBman/dist/
 # saving changes and pushing
 git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
