@@ -16,7 +16,7 @@ git checkout $branch
 
 
 # temporary folder for storing tar files. folder also added in .gitignore
-mkdir -p build/tmp
+mkdir -p ~/KOBman/build/tmp
 
 # making of zip files
 
