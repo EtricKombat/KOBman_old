@@ -1,32 +1,5 @@
 #!/bin/bash
 
-#function __kobman_development_tob_dir {
-#
-#	local namespace="$1"
-#	local version_id="$2"
-#	cd ~
-#	if [ ! -d "${KOBMAN_TOB_DEV_DIR}/von-network" ]; then
-#		__kobman_install_dependancies
-#		mkdir -p Dev_TOB
-#		cd Dev_TOB
-#		export KOBMAN_TOB_DEV_DIR=$PWD
-#		cd ${KOBMAN_TOB_DEV_DIR}
-#		mkdir -p test/ dependency/
-#               	__kobman_echo_cyan "Copying source code  of https://github.com/${namespace}/KOBman to your local system ! "
-#	else
-#		sudo rm -rf  Dev_TOB
-#		__kobman_install_dependancies
-#		mkdir -p Dev_TOB
-#		cd Dev_TOB
-#		export KOBMAN_TOB_DEV_DIR=$PWD
-#		cd ${KOBMAN_TOB_DEV_DIR}
-#		mkdir -p test/ dependency/
-#               	__kobman_echo_cyan "Removing existing older version & Copying newer Version : "${version_id}" ,  source code from https://github.com/${namespace}/KOBman into your local system ! "
-#
-#	fi
-#
-#
-#}
 function __kobman_install_TheOrgBook
 {
 
@@ -42,18 +15,18 @@ function __kobman_install_TheOrgBook
 		cd ~
 		mkdir -p Dev_"${environment_name}"
 		cd Dev_"${environment_name}"
-#		export Dev_"${environment_name}" = $PWD
+		export Dev_"${environment_name}" = $PWD
 
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 	#	__kobman_install_dependancies
 
 		sudo wget --no-proxy https://github.com/openshift/source-to-image/releases/download/v1.1.14/source-to-image-v1.1.14-874754de-linux-amd64.tar.gz
-       		sudo tar -xvzf source-to-image-v1.1.14-874754de-linux-amd64.tar.gz
-	        sudo mv sti s2i /usr/local/bin/
+    sudo tar -xvzf source-to-image-v1.1.14-874754de-linux-amd64.tar.gz
+	  sudo mv sti s2i /usr/local/bin/
 
 		# sudo ~/Dev_von-network/von-network/manage rm
-        	sudo ~/Dev_TheOrgBook/TheOrgBook/docker/manage build
+    sudo ~/Dev_TheOrgBook/TheOrgBook/docker/manage build
 		 __kobman_echo_violet "Dev environment for ${environment_name} created successfully"
 	else
  		__kobman_echo_white "Removing existing version "

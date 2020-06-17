@@ -17,9 +17,9 @@ function __kobman_install_von-network
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 		__kobman_install_dependancies
-  	# sudo ~/Dev_von-network/von-network/manage rm
-        	sudo ~/Dev_von-network/von-network/manage build
-		 __kobman_echo_violet "Dev environment for ${environment_name} created successfully"
+  	sudo ~/Dev_von-network/von-network/manage rm
+    sudo ~/Dev_von-network/von-network/manage build
+		__kobman_echo_violet "Dev environment for ${environment_name} created successfully"
 	else
  		__kobman_echo_white "Removing existing version "
 		rm -rf ~/Dev_"${environment_name}"
@@ -239,20 +239,12 @@ function __kobman_version_von-network
 
 }
 
-################################old codes to refer if required ################
+################################other mandatory functions ################
 
 
 
 
 #function __kobman_uninstall_tobvon
 #{
-# 	__kobman_echo_white "Removing Verifiable Organizations Network environment...  "
-#	cd ${KOBMAN_VON_DEV_DIR}
-#	rm -rf von-network/ 2> /dev/null
-#	cd ~
-#	rm -rf Dev_TOBVon/ 2> /dev/null
-#	rm -rf ${KOBMAN_VON_DEV_DIR} 2> /dev/null
-# 	__kobman_echo_red "Verifiable Organizations Network environment removed !! "
-#	cd ~
+
 #}
-#
