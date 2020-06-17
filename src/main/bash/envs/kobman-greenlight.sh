@@ -7,10 +7,17 @@ function __kobman_install_greenlight
 	local version_id="$2"
 	cd ~
 
-	if [ ! -d "Dev_greenlight" ]; then
- 		__kobman_echo_white "Creating Dev environment for ${environment_name}"
+	if [ ! -d "Dev_von-network" ]; then
+
+		__kobman_echo_white "Creating Dev environment for von-network (greenlight_dependancy)"
+    __kobman_install_von-network "von-network" "$version_id"
+
+		__kobman_echo_white "Creating Dev environment for TheOrgBook(greenlight_dependancy)"
+		__kobman_install_TheOrgBook "TheOrgBook" "$version_id"
+
+		__kobman_echo_white "Creating Dev environment for ${environment_name}"
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
- 		__kobman_echo_white "version :${version_id} "
+ 		__kobman_echo_white "version :${version_id}	"
 		cd ~
 		mkdir -p Dev_"${environment_name}"
 		cd Dev_"${environment_name}"
@@ -28,7 +35,14 @@ function __kobman_install_greenlight
 	else
  		__kobman_echo_white "Removing existing version "
 		sudo rm -rf ~/Dev_"${environment_name}"
- 		__kobman_echo_white "Creating Dev environment for ${environment_name}"
+		__kobman_echo_white "Creating Dev environment for von-network (greenlight_dependancy)"
+    __kobman_install_von-network "von-network" "$version_id"
+
+		__kobman_echo_white "Creating Dev environment for TheOrgBook(greenlight_dependancy)"
+		__kobman_install_TheOrgBook "TheOrgBook" "$version_id"
+
+
+		__kobman_echo_white "Creating Dev environment for ${environment_name}"
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
  		__kobman_echo_white "version :${version_id} "
 
