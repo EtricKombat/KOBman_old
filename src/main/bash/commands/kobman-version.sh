@@ -3,13 +3,9 @@
 
 function __kob_version {
 
- 	local command=$1
-  local environment_type=$2
-  local environment_value=$3
 
-  echo "command=" "$command"
-  echo "environment_type=" "$environment_type"
-  echo "environment_value=" "$environment_value"
+  local environment_type=$1
+  local environment_value=$2
 
   if [ "$environment_type" == "" ]
 	then
