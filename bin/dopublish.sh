@@ -16,7 +16,7 @@ git checkout $branch
 
 
 # temporary folder for storing tar files. folder also added in .gitignore
-mkdir -p build/tmp
+mkdir -p ~/KOBman/build/tmp
 
 # making of zip files
 
@@ -45,4 +45,4 @@ git commit -m "Released the version $kob_rel_version"
 git push origin -f $dist_branch
 
 #checkout back to master
-git checkout release_process
+git checkout Demo 
