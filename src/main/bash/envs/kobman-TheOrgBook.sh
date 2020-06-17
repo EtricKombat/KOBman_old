@@ -8,8 +8,12 @@ function __kobman_install_TheOrgBook
 
 	cd ~
 
-	if [ ! -d "Dev_TheOrgBook" ]; then
- 		__kobman_echo_white "Creating Dev environment for ${environment_name}"
+	if [ ! -d "Dev_von-network" ]; then
+
+    __kobman_echo_white "Creating Dev environment for von-network"
+    __kobman_install_von-network "von-network" "$version_id"
+
+    __kobman_echo_white "Creating Dev environment for ${environment_name}"
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
  		__kobman_echo_white "version :${version_id} "
 		cd ~
@@ -31,7 +35,12 @@ function __kobman_install_TheOrgBook
 	else
  		__kobman_echo_white "Removing existing version "
 		sudo rm -rf ~/Dev_"${environment_name}"
- 		__kobman_echo_white "Creating Dev environment for ${environment_name}"
+
+    __kobman_echo_white "Creating Dev environment for von-network"
+    __kobman_install_von-network "von-network" "$version_id"
+
+
+    __kobman_echo_white "Creating Dev environment for ${environment_name}"
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
  		__kobman_echo_white "version :${version_id} "
 
