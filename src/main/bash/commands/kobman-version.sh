@@ -3,21 +3,21 @@
 
 function __kob_version {
 
- 	local command deployment_type environment_type name_space
-	command=$COMMAND
-	deployment_type=$DEPLOYMENT_TYPE
-	environment_type=$ENVIRONMENT_TYPE
-	name_space=$NAME_SPACE
-  echo "deployment_type=" "$deployment_type"
+ 	local command=$1
+  local environment_type=$2
+  local environment_value=$3
+
+  echo "command=" "$command"
   echo "environment_type=" "$environment_type"
-  echo "name_space=" "$name_space"
-  if [ "$DEPLOYMENT_TYPE" == "" ]
+  echo "environment_value=" "$environment_value"
+
+  if [ "$environment_type" == "" ]
 	then
 		cd "${KOBMAN_DIR}/var"
 		cat version.txt
 		cd ~
 	else
-		__kobman_environment_version
+		__kobman_environment_version "$environment_type" "$environment_value"
 	fi
 }
 
@@ -25,52 +25,11 @@ function __kob_version {
 
 function __kobman_environment_version {
 
- 	local name_space
-	name_space=$1
-	if [ "$DEPLOYMENT_TYPE" == "--environment" ]
+  local environment_type=$1
+  local environment_value=$2
+
+	if [ "$environment_type" == "--environment" ]
 	then
-
-		case "$ENVIRONMENT_TYPE" in
-		tobvon)
-			__kobman_version_tobvon
-
-		;;
-		tob)
-			__kobman_version_tob
-
-		;;
-		greenlight)
-			__kobman_version_greenlight
-		;;
-		kobman)
-			__kobman_version_kobman
-
-		;;
-		kobvon)
-			echo "invoking kobman version"
-			__kobman_version_kobvon
-
-		;;
-		kob)
-			__kobman_version_kob
-
-		;;
-		kobdflow)
-			__kobman_version_kobdflow
-
-		;;
-		kobconnect)
-			__kobman_version_kobconnect
-
-		;;
-		kobregistery)
-			__kobman_version_kobregistery
-
-		;;
-		"")
-			echo "verify your command &  try again"
-
-		;;
-	esac
+			__kobman_version_"$environment_value"
 	fi
 }
