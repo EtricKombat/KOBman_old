@@ -230,7 +230,7 @@ function __kobman_visual_studio_install {
 
 function __kobman_version_von-network
 {
-	cat ${KOBMAN_DIR}/envs/kob_env_von-network/current
+	cat ${KOBMAN_DIR}/envs/kob_env_von-network/current 2> /dev/null
 	if [ "$?" != "0" ]; then
 
 		__kobman_echo_debug "von-network environment does not exist in the local system"

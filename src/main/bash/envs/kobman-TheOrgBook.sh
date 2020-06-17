@@ -140,7 +140,7 @@ function __kobman_uninstall_tob
 
 function __kobman_version_TheOrgBook
 {
-	cat ${KOBMAN_DIR}/envs/kob_env_TheOrgBook/current
+	cat ${KOBMAN_DIR}/envs/kob_env_TheOrgBook/current 2> /dev/null
 	if [ "$?" != "0" ]; then
 
 		__kobman_echo_debug "TheOrgBook environment does not exist in the local system"
