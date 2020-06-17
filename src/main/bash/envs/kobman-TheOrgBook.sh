@@ -109,7 +109,7 @@ function __kobman_start_tob
 function __kobman_uninstall_tob
 {
  	__kobman_echo_white "Removing TheOrgBook environment...  "
-	chmod a+rwx $KOBMAN_TOB_DEV_DIR
+	# chmod a+rwx $KOBMAN_TOB_DEV_DIR
 	${KOBMAN_TOB_DEV_DIR}/TheOrgBook/docker/manage rm 2> /dev/null
 	rm ${KOBMAN_TOB_DEV_DIR}/source-* 2> /dev/null
 	rm -rf ${KOBMAN_TOB_DEV_DIR}/TheOrgBook/ 2> /dev/null
