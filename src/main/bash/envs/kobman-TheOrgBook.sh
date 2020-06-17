@@ -136,8 +136,15 @@ function __kobman_uninstall_tob
 	rm -rf ${KOBMAN_TOB_DEV_DIR} 2> /dev/null
  	__kobman_echo_red "TheOrgBook environment removed !! "
 	cd ~
-}	
+}
+
 function __kobman_version_TheOrgBook
 {
-	cat ${KOBMAN_DIR}/envs/kob_env_${environment_name}/current
+	cat ${KOBMAN_DIR}/envs/kob_env_TheOrgBook/current
+	if [ "$?" != "0" ]; then
+
+		__kobman_echo_debug "TheOrgBook environment does not exist in the local system"
+		return 1
+	fi
+
 }

@@ -110,5 +110,11 @@ function __kobman_uninstall_greenlight
 
 function __kobman_version_greenlight
 {
-	cat ${KOBMAN_DIR}/envs/kob_env_${environment_name}/current
+	cat ${KOBMAN_DIR}/envs/kob_env_greenlight/current
+	if [ "$?" != "0" ]; then
+
+		__kobman_echo_debug "environment does not exist in the local system"
+		return 1
+	fi
+
 }

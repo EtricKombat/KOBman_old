@@ -42,4 +42,10 @@ function __kobman_create_dev_environment
 function __kobman_version_KOBman
 {
 	cat ${KOBMAN_DIR}/envs/kob_env_KOBman/current
+	if [ "$?" != "0" ]; then
+
+		__kobman_echo_debug "KOBman environment does not exist in the local system"
+		return 1
+	fi
+
 }
