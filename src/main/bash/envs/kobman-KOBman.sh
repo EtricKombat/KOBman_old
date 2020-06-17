@@ -30,16 +30,16 @@ function __kobman_install_KOBman
 
 function __kobman_create_dev_environment
 {
-	local environment="$1"
+	local environment_name="$1"
 
 	cd ~
-	mkdir -p Dev_"${environment}"
-	cd Dev_"${environment}"
-	export Dev_${environment}=$PWD
+	mkdir -p Dev_"${environment_name}"
+	cd Dev_"${environment_name}"
+	export Dev_${environment_name}=$PWD
 	mkdir -p test/ dependency/
 }
 
 function __kobman_version_KOBman
 {
-	cat ${KOBMAN_DIR}/envs/kob_env_${environment_name}/current
+	cat ${KOBMAN_DIR}/envs/kob_env_KOBman/current
 }
