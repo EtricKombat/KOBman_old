@@ -2,26 +2,38 @@
 
 path_to_kob_envs="${KOBMAN_DIR}/envs"
 path_to_kob_env_tests=~/KOBman/tests/envs
-kobman_env_name=${1:-dummyenv}
+kobman_env_name=$1
+if [[ -z $kobman_env_name ]]; then
+  echo "usage: ./test-kob-install.sh <env_name> <version>"
+  exit
+fi
 version=$2
+if [[ -z $version ]]; then
+  echo "usage: ./test-kob-install.sh <env_name> <version>"
+  exit
+fi
 KOBMAN_NAMESPACE=${KOBMAN_NAMESPACE:-hyperledgerkochi}
 status="true"
 
+
+
 function __test_kob_init {
-  source $KOBMAN_DIR/src/kobman-utils.sh
-  __kobman_echo_no_colour "checking for kob..."
+
+  echo "checking for kob..."
 
   if [[ -d ${KOBMAN_DIR} ]]; then
-
+    source $KOBMAN_DIR/src/kobman-utils.sh
     __kobman_echo_no_colour "kob found"
     source "${KOBMAN_DIR}/bin/kobman-init.sh"
 
   else
 
-    __kobman_echo_no_colour "kob not found"
-    __kobman_echo_no_colour "installing kobman...."
-    curl -L https://raw.githubusercontent.com/${KOBMAN_NAMESPACE}/KOBman/master/get.kobman.io | bash > /dev/null 2>&1
-    source "${KOBMAN_DIR}/bin/kobman-init.sh"
+    echo "kob not found"
+    echo "Please install KOBman first and try again"
+    status="false"
+    echo "Exiting!!!!"
+    exit
+
 
   fi
 
@@ -305,7 +317,7 @@ function fake_publish_dummyenv
 }
 function __test_kob_run
 {
-  if [[ $status=="true" ]]; then
+  if [[ $status == "true" ]]; then
 
     __test_kob_init
 
@@ -317,7 +329,7 @@ function __test_kob_run
 
   fi
 
-  if [[ $status=="true" ]]; then
+  if [[ $status == "true" ]]; then
 
     __test_kob_execute
 
@@ -327,7 +339,7 @@ function __test_kob_run
     return 1
 
   fi
-  if [[ $status=="true" ]]; then
+  if [[ $status == "true" ]]; then
 
     __test_kob_validate
 
