@@ -464,3 +464,189 @@ OK: 125 MiB in 84 packages
 2020-06-18 09:01:18 URL:https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.jar [794639/794639] -> "lib/pgsql-jdbc.jar" [1]
 2020-06-18 09:01:56 URL:https://repo1.maven.org/maven2/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar [2001778/2001778] -> "lib/mysql-jdbc.jar" [1]
 2020-06-18 09:05:56 URL:https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.18.0/sqlite-jdbc-3.18.0.jar [6190949/6190949] -> "lib/sqlite-jdbc.jar" [1]
+World updated, but the following packages are not removed due to:
+  ca-certificates: libcurl git java-cacerts
+                   openjdk8-jre-base openjdk8-jre
+
+(1/1) Purging wget (1.20.3-r0)
+Executing busybox-1.28.4-r3.trigger
+OK: 124 MiB in 83 packages
+Removing intermediate container c0e5e32d03f8
+ ---> 506abe4e124c
+Step 19/22 : COPY start.sh conf ./
+ ---> 1a381c20300e
+Step 20/22 : RUN chown -R 1001:0 /app &&     chmod -R ug+rwx /app
+ ---> Running in 666a70d8eff1
+Removing intermediate container 666a70d8eff1
+ ---> 10e879e58269
+Step 21/22 : USER 1001
+ ---> Running in b879c2238e48
+Removing intermediate container b879c2238e48
+ ---> 9e2d30016cf8
+Step 22/22 : CMD [ "sh", "start.sh" ]
+ ---> Running in c3e6c81f4030
+Removing intermediate container c3e6c81f4030
+ ---> 254c4a78f5b0
+Successfully built 254c4a78f5b0
+Successfully tagged schema-spy:latest
+
+Building django image from bcgovimages/von-image:py36-1.7-ew-1-s2i...
+---> Installing application source ...
+---> Installing dependencies ...
+Collecting django<3,>=2.1.6 (from -r requirements.txt (line 2))
+Downloading https://files.pythonhosted.org/packages/fb/e1/c5520a00ae75060b0c03eea0115b272d6dc5dbd2fd3b75d0c0fbc9d262bc/Django-2.2.13-py3-none-any.whl (7.5MB)
+Collecting djangorestframework==3.9.1 (from -r requirements.txt (line 3))
+Downloading https://files.pythonhosted.org/packages/ef/13/0f394111124e0242bf3052c5578974e88e62e3715f0daf76b7c987fc6705/djangorestframework-3.9.1-py2.py3-none-any.whl (950kB)
+Collecting djangorestframework-bulk<1,>=0.2.1 (from -r requirements.txt (line 4))
+Downloading https://files.pythonhosted.org/packages/32/f8/79fd8c1919fd1e033eedc04fea3396e978eb20c9cda49a0c538e9c5d8127/djangorestframework-bulk-0.2.1.tar.gz
+Collecting django-cors-headers<3,>=2.4.0 (from -r requirements.txt (line 5))
+Downloading https://files.pythonhosted.org/packages/83/7f/96fa0dc138d4aab23bcbcb312df31ca63fb34f643805f02dddf9e460c648/django_cors_headers-2.5.3-py2.py3-none-any.whl
+Collecting django-filter>=1.1.0 (from -r requirements.txt (line 6))
+Downloading https://files.pythonhosted.org/packages/35/94/e516d7f41adecb9fd280c89feceb98fa58f6966a583035c8016ed455c4e5/django_filter-2.3.0-py3-none-any.whl (73kB)
+Collecting psycopg2-binary<3,>=2.7.3.1 (from -r requirements.txt (line 9))
+Downloading https://files.pythonhosted.org/packages/d3/8a/a7ed55c2c55bd4f5844d72734fedc0cef8a74518a0a19105a21c15628f1e/psycopg2_binary-2.8.5-cp36-cp36m-manylinux1_x86_64.whl (2.9MB)
+Collecting gunicorn<20,>=19.7.1 (from -r requirements.txt (line 12))
+Downloading https://files.pythonhosted.org/packages/5f/54/c15f2c243c19074cbf06ce6c48732d99aec825487f87e57e86e9a22990f2/gunicorn-19.10.0-py2.py3-none-any.whl (113kB)
+Collecting whitenoise<4.2,>=4.1.0 (from -r requirements.txt (line 13))
+Downloading https://files.pythonhosted.org/packages/a6/b4/72f2218c91cef12fc434c163881067be482a917c4067834cdbced90133df/whitenoise-4.1.4-py2.py3-none-any.whl
+Collecting drf-yasg<2,>=1.10.2 (from -r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/18/de/729c403c2ccfef3680790c2cb5460b7bdf93457586f09d5c15a9e5da450f/drf_yasg-1.17.1-py2.py3-none-any.whl (1.1MB)
+Collecting packaging<20,>=19.0 (from -r requirements.txt (line 18))
+Downloading https://files.pythonhosted.org/packages/cf/94/9672c2d4b126e74c4496c6b3c58a8b51d6419267be9e70660ba23374c875/packaging-19.2-py2.py3-none-any.whl
+Collecting flex<7,>=6.13.2 (from -r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/de/51/f3bf1779a12e92c3bf9f2d0ee242298775ef625adb596951090bdd24854f/flex-6.14.1.tar.gz (40kB)
+Collecting swagger-spec-validator<3,>=2.4.0 (from -r requirements.txt (line 20))
+Downloading https://files.pythonhosted.org/packages/39/c4/339a8d7a6a431ea3447fd0cee45d8570247cd19e29443be87748b0225909/swagger_spec_validator-2.7.2-py2.py3-none-any.whl
+Collecting pytest-cov<3,>=2.5.1 (from -r requirements.txt (line 23))
+Downloading https://files.pythonhosted.org/packages/3d/13/ae3dec587b1cc07fb9f294e52ea9ad140266aea55adb9e12eade3625bd27/pytest_cov-2.10.0-py2.py3-none-any.whl
+Collecting pytest-django<4,>=3.1.2 (from -r requirements.txt (line 24))
+Downloading https://files.pythonhosted.org/packages/95/ba/2b914711275371ed1822a5a28313027b4edcc097c4db00ed8398896668f0/pytest_django-3.9.0-py2.py3-none-any.whl
+Collecting drf-haystack<2,>=1.6.1 (from -r requirements.txt (line 27))
+Downloading https://files.pythonhosted.org/packages/29/33/494d3349227263e30b6ef31d34d80286f31d46d470e5edc71570344c801f/drf_haystack-1.8.6-py2.py3-none-any.whl
+Collecting django-haystack<3,>=2.7.dev0 (from -r requirements.txt (line 28))
+Downloading https://files.pythonhosted.org/packages/69/43/3e247b7b2134b48e9a53fb387e191e5e05b5f38f2faf78ca892097c2b441/django-haystack-2.8.1.tar.gz (1.6MB)
+Collecting pysolr<4,>=3.6.0 (from -r requirements.txt (line 29))
+Downloading https://files.pythonhosted.org/packages/9c/c6/9f0b80f17747db12acbdf421a22acdad23c93eea7046181ae6ebdf427bfd/pysolr-3.9.0.tar.gz (55kB)
+Collecting drf-generators>=0.3.0 (from -r requirements.txt (line 32))
+Downloading https://files.pythonhosted.org/packages/50/bc/82a5524273a094464aff94a0d42f5b5b600af53b8ba7473495737633ce69/drf-generators-0.5.0.tar.gz
+Collecting asyncio<4,>=3.4.3 (from -r requirements.txt (line 42))
+Downloading https://files.pythonhosted.org/packages/22/74/07679c5b9f98a7cb0fc147b1ef1cc1853bc07a4eb9cb5731e24732c5f773/asyncio-3.4.3-py3-none-any.whl (101kB)
+Collecting ptvsd==4.1.1a1 (from -r requirements.txt (line 47))
+Downloading https://files.pythonhosted.org/packages/dc/b3/b833059e1cc48e177f760c5565f4a0d16577c2fba8992bdeb3fcf1cf443f/ptvsd-4.1.1a1.zip (1.3MB)
+Collecting aiohttp~=3.4.0 (from -r requirements.txt (line 50))
+Downloading https://files.pythonhosted.org/packages/52/f9/c22977fc95346911d8fe507f90c3c4e4f445fdf339b750be6f03f090498d/aiohttp-3.4.4-cp36-cp36m-manylinux1_x86_64.whl (1.1MB)
+Collecting aiohttp-wsgi~=0.8.1 (from -r requirements.txt (line 51))
+Downloading https://files.pythonhosted.org/packages/ad/30/210b391ec7fd3217bbcc9d95dad60aa56c7754c5d27526a64ef54adc8721/aiohttp_wsgi-0.8.2-py3-none-any.whl
+Collecting asgiref~=3.1.2 (from -r requirements.txt (line 53))
+Downloading https://files.pythonhosted.org/packages/ce/2e/dd4b5afc37d595fc44def4f365cc8ee080a4962a0eb1e05e79da65a8e074/asgiref-3.1.4-py2.py3-none-any.whl
+Collecting sqlparse (from django<3,>=2.1.6->-r requirements.txt (line 2))
+Downloading https://files.pythonhosted.org/packages/85/ee/6e821932f413a5c4b76be9c5936e313e4fc626b33f16e027866e1d60f588/sqlparse-0.3.1-py2.py3-none-any.whl (40kB)
+Collecting pytz (from django<3,>=2.1.6->-r requirements.txt (line 2))
+Downloading https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl (510kB)
+Requirement already satisfied: setuptools in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from djangorestframework-bulk<1,>=0.2.1->-r requirements.txt (line 4))
+Requirement already satisfied: six>=1.10.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Collecting coreschema>=0.0.4 (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/93/08/1d105a70104e078718421e6c555b8b293259e7fc92f7e9a04869947f198f/coreschema-0.0.4.tar.gz
+Collecting uritemplate>=3.0.0 (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/bf/0c/60d82c077998feb631608dca3cc1fe19ac074e772bf0c24cf409b977b815/uritemplate-3.0.1-py2.py3-none-any.whl
+Collecting ruamel.yaml>=0.15.34 (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/a6/92/59af3e38227b9cc14520bf1e59516d99ceca53e3b8448094248171e9432b/ruamel.yaml-0.16.10-py2.py3-none-any.whl (111kB)
+Collecting coreapi>=2.3.3 (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/fc/3a/9dedaad22962770edd334222f2b3c3e7ad5e1c8cab1d6a7992c30329e2e5/coreapi-2.3.3-py2.py3-none-any.whl
+Collecting inflection>=0.3.1 (from drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/d2/cd/f04c661d1b5ba6b7d77008e8fedd28a27a683eeeffcd93c6b2dbe54ea983/inflection-0.5.0-py2.py3-none-any.whl
+Requirement already satisfied: pyparsing>=2.0.2 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from packaging<20,>=19.0->-r requirements.txt (line 18))
+Requirement already satisfied: PyYAML>=3.11 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Collecting validate-email>=1.2 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/84/a0/cb53fb64b52123513d04f9b913b905f3eb6fda7264e639b4573cc715c29f/validate_email-1.3.tar.gz
+Collecting rfc3987>=1.3.4 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/65/d4/f7407c3d15d5ac779c3dd34fbbc6ea2090f77bd7dd12f207ccf881551208/rfc3987-1.3.8-py2.py3-none-any.whl
+Collecting requests>=2.4.3 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/45/1e/0c169c6a5381e241ba7404532c16a21d86ab872c9bed8bdcd4c423954103/requests-2.24.0-py2.py3-none-any.whl (61kB)
+Collecting strict-rfc3339>=0.7 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/56/e4/879ef1dbd6ddea1c77c0078cd59b503368b0456bcca7d063a870ca2119d3/strict-rfc3339-0.7.tar.gz
+Collecting click>=3.3 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl (82kB)
+Collecting jsonpointer>=1.7 (from flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/18/b0/a80d29577c08eea401659254dfaed87f1af45272899e1812d7e01b679bc5/jsonpointer-2.0-py2.py3-none-any.whl
+Requirement already satisfied: jsonschema in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from swagger-spec-validator<3,>=2.4.0->-r requirements.txt (line 20))
+Requirement already satisfied: pytest>=4.6 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Collecting coverage>=4.4 (from pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Downloading https://files.pythonhosted.org/packages/2a/3e/fc18ecef69f174c13493576f46966053c1da07fd8721962530dc1a10b1ca/coverage-5.1-cp36-cp36m-manylinux1_x86_64.whl (227kB)
+Requirement already satisfied: python-dateutil in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from drf-haystack<2,>=1.6.1->-r requirements.txt (line 27))
+Requirement already satisfied: multidict<5.0,>=4.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: attrs>=17.3.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: async-timeout<4.0,>=3.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: yarl<2.0,>=1.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: idna-ssl>=1.0; python_version < "3.7" in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: chardet<4.0,>=2.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from aiohttp~=3.4.0->-r requirements.txt (line 50))
+Requirement already satisfied: jinja2 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from coreschema>=0.0.4->drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Collecting ruamel.yaml.clib>=0.1.2; platform_python_implementation == "CPython" and python_version < "3.9" (from ruamel.yaml>=0.15.34->drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/53/77/4bcd63f362bcb6c8f4f06253c11f9772f64189bf08cf3f40c5ccbda9e561/ruamel.yaml.clib-0.2.0-cp36-cp36m-manylinux1_x86_64.whl (548kB)
+Collecting itypes (from coreapi>=2.3.3->drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Downloading https://files.pythonhosted.org/packages/3f/bb/3bd99c7cd34d4a123b2903e16da364f6d2078b1c3a3530a8ad105c668104/itypes-1.2.0-py2.py3-none-any.whl
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests>=2.4.3->flex<7,>=6.13.2->-r requirements.txt (line 19))
+Downloading https://files.pythonhosted.org/packages/e1/e5/df302e8017440f111c11cc41a6b432838672f5a70aa29227bf58149dc72f/urllib3-1.25.9-py2.py3-none-any.whl (126kB)
+Requirement already satisfied: certifi>=2017.4.17 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from requests>=2.4.3->flex<7,>=6.13.2->-r requirements.txt (line 19))
+Requirement already satisfied: idna<3,>=2.5 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from requests>=2.4.3->flex<7,>=6.13.2->-r requirements.txt (line 19))
+Requirement already satisfied: pyrsistent>=0.14.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from jsonschema->swagger-spec-validator<3,>=2.4.0->-r requirements.txt (line 20))
+Requirement already satisfied: importlib-metadata; python_version < "3.8" in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from jsonschema->swagger-spec-validator<3,>=2.4.0->-r requirements.txt (line 20))
+Requirement already satisfied: more-itertools>=4.0.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Requirement already satisfied: pluggy<1.0,>=0.12 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Requirement already satisfied: wcwidth in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Requirement already satisfied: py>=1.5.0 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from pytest>=4.6->pytest-cov<3,>=2.5.1->-r requirements.txt (line 23))
+Requirement already satisfied: MarkupSafe>=0.23 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from jinja2->coreschema>=0.0.4->drf-yasg<2,>=1.10.2->-r requirements.txt (line 17))
+Requirement already satisfied: zipp>=0.5 in ./.pyenv/versions/3.6.9/lib/python3.6/site-packages (from importlib-metadata; python_version < "3.8"->jsonschema->swagger-spec-validator<3,>=2.4.0->-r requirements.txt (line 20))
+Installing collected packages: sqlparse, pytz, django, djangorestframework, djangorestframework-bulk, django-cors-headers, django-filter, psycopg2-binary, gunicorn, whitenoise, coreschema, uritemplate, ruamel.yaml.clib, ruamel.yaml, itypes, urllib3, requests, coreapi, packaging, inflection, drf-yasg, validate-email, rfc3987, strict-rfc3339, click, jsonpointer, flex, swagger-spec-validator, coverage, pytest-cov, pytest-django, django-haystack, drf-haystack, pysolr, drf-generators, asyncio, ptvsd, aiohttp, aiohttp-wsgi, asgiref
+Running setup.py install for djangorestframework-bulk: started
+Running setup.py install for djangorestframework-bulk: finished with status 'done'
+Running setup.py install for coreschema: started
+Running setup.py install for coreschema: finished with status 'done'
+Found existing installation: packaging 20.1
+Uninstalling packaging-20.1:
+Successfully uninstalled packaging-20.1
+Running setup.py install for validate-email: started
+Running setup.py install for validate-email: finished with status 'done'
+Running setup.py install for strict-rfc3339: started
+Running setup.py install for strict-rfc3339: finished with status 'done'
+Running setup.py install for flex: started
+Running setup.py install for flex: finished with status 'done'
+Running setup.py install for django-haystack: started
+Running setup.py install for django-haystack: finished with status 'done'
+Running setup.py install for pysolr: started
+Running setup.py install for pysolr: finished with status 'done'
+Running setup.py install for drf-generators: started
+Running setup.py install for drf-generators: finished with status 'done'
+Running setup.py install for ptvsd: started
+Running setup.py install for ptvsd: finished with status 'done'
+Found existing installation: aiohttp 3.3.2
+Uninstalling aiohttp-3.3.2:
+Successfully uninstalled aiohttp-3.3.2
+Successfully installed aiohttp-3.4.4 aiohttp-wsgi-0.8.2 asgiref-3.1.4 asyncio-3.4.3 click-7.1.2 coreapi-2.3.3 coreschema-0.0.4 coverage-5.1 django-2.2.13 django-cors-headers-2.5.3 django-filter-2.3.0 django-haystack-2.8.1 djangorestframework-3.9.1 djangorestframework-bulk-0.2.1 drf-generators-0.5.0 drf-haystack-1.8.6 drf-yasg-1.17.1 flex-6.14.1 gunicorn-19.10.0 inflection-0.5.0 itypes-1.2.0 jsonpointer-2.0 packaging-19.2 psycopg2-binary-2.8.5 ptvsd-4.1.1a1 pysolr-3.9.0 pytest-cov-2.10.0 pytest-django-3.9.0 pytz-2020.1 requests-2.24.0 rfc3987-1.3.8 ruamel.yaml-0.16.10 ruamel.yaml.clib-0.2.0 sqlparse-0.3.1 strict-rfc3339-0.7 swagger-spec-validator-2.7.2 uritemplate-3.0.1 urllib3-1.25.9 validate-email-1.3 whitenoise-4.1.4
+You are using pip version 9.0.3, however version 20.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+---> Collecting Django static files ...
+Realtime indexing has been disabled ...
+
+171 static files copied to '/home/indy/tob_api/staticfiles', 537 post-processed.
+Build completed successfully
+kob-user@kobuser-VirtualBox:~/TheOrgBook/docker$ 
+kob-user@kobuser-VirtualBox:~/TheOrgBook/docker$ sudo ./manage start seed=the_org_book_0000000000000000000
+[sudo] password for kob-user: 
+WARNING: The INDY_WALLET_DID variable is not set. Defaulting to a blank string.
+Creating network "tob_tob" with the default driver
+Creating volume "tob_tob-data" with default driver
+Creating volume "tob_tob-wallet" with default driver
+Creating volume "tob_tob-wallet-db" with default driver
+Creating tob_wallet-db_1 ... done
+Creating tob_tob-solr_1   ... done
+Creating tob_tob-db_1    ... done
+Creating tob_schema-spy_1 ... 
+Creating tob_tob-api_1    ... 
+Creating tob_tob-api_1    ... error
+
+Creating tob_schema-spy_1 ... done
+starting userland proxy: listen tcp 0.0.0.0:3000: bind: address already in use
+
+ERROR: for tob-api  Cannot start service tob-api: driver failed programming external connectivity on endpoint tob_tob-api_1 (6975140c7fc8c914957baf2c4b1cb6d535fb6ae72028ce740b4881ebf1a8e817): Error starting userland proxy: listen tcp 0.0.0.0:3000: bind: address already in use
+ERROR: Encountered errors while bringing up the project.
