@@ -20,7 +20,7 @@ function __test_kob_init
     fi
 
     __kobman_echo_no_colour "Checking for installed version file...."
-    env_folder=($(find $KOBMAN_DIR/var/ -name "version.txt" -print))
+
     env_version=($(find $KOBMAN_DIR/var/ -name "version.txt" -print))
     if [[ -z $env_version ]]; then
          __kobman_echo_no_colour "No version file found"
@@ -37,9 +37,8 @@ function __test_kob_init
 
 function __test_kob_execute
 {
-    __kobman_echo_no_colour "Executing status command"
-    kob status >> tmp.txt
-    #kob version >> tmp1.txt
+    __kobman_echo_no_colour "Executing version command"
+    kob version >> tmp.txt
 
 }
 
@@ -47,26 +46,10 @@ function __test_kob_validate
 {
 
     __kobman_echo_no_colour "Validating...."
-    for i in "${env_folder[@]}"; do
-        n=${i##*_}
-        cat tmp.txt | grep -qw $n
-        if [[ "$?" != "0" ]]; then
-            __kobman_echo_no_colour "could not find environemnt $n in the status"
-            status="false"
-            return 1
-        fi
 
-        cat tmp.txt | grep -w $n | grep -w "$(cat $i/current)" | grep -q "*"
-        if [[ "$?" != "0" ]]; then
-            __kobman_echo_no_colour "The current version is not represented properly for $n"
-            status=false
-            return 1
-        fi
-    done
-
-    cat tmp.txt | grep -w $(cat $KOBMAN_DIR/var/current) | grep -q "~"
+    cat tmp.txt | grep -w $(cat $KOBMAN_DIR/var/version.txt) | grep -q "*"
     if [[ "$?" != "0" ]]; then
-        __kobman_echo_no_colour "~ is not against the last installed environment"
+        __kobman_echo_no_colour "no version details available"
         status="false"
         return 1
     fi
