@@ -11,9 +11,9 @@ function __kobman_install_von-network
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
  		__kobman_echo_white "version :${version_id} "
 		cd ~
-		mkdir -p Dev_"${environment_name}"
-		cd Dev_"${environment_name}"
-		export Dev_"${environment_name}" = $PWD
+		mkdir -p Dev_${environment_name}
+		cd Dev_${environment_name}
+		export Dev_${environment_name}=$PWD
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 		__kobman_install_dependancies
@@ -27,9 +27,9 @@ function __kobman_install_von-network
  		__kobman_echo_white "from https://github.com/${KOBMAN_NAMESPACE}/${environment_name}"
  		__kobman_echo_white "version :${version_id} "
 		cd ~
-		mkdir -p Dev_"${environment_name}"
-		cd Dev_"${environment_name}"
-		export Dev_"${environment_name}" = $PWD
+		mkdir -p Dev_${environment_name}
+		cd Dev_${environment_name}
+		export Dev_${environment_name}=$PWD
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 		__kobman_install_dependancies
@@ -142,6 +142,7 @@ function __kobman_check_proxy {
 function __kobman_git_install {
 
 	__kobman_echo_yellow "Installing Git"
+	sudo dpkg --configure -a
 	sudo apt install git -y
 }
 
