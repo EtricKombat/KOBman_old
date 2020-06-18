@@ -47,7 +47,7 @@ function __test_kob_validate
 
     __kobman_echo_no_colour "Validating...."
 
-    cat tmp.txt | grep -w $(cat $KOBMAN_DIR/var/version.txt) | grep -q "*"
+    cat tmp.txt | grep -w $(cat $KOBMAN_DIR/var/version.txt)
     if [[ "$?" != "0" ]]; then
         __kobman_echo_no_colour "no version details available"
         status="false"
