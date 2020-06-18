@@ -1,28 +1,35 @@
-kob-user@kobuser-VirtualBox:~$ kob install --environment von-network --version 0.0.3
-Removing existing version 
+kob-user@kobuser-VirtualBox:~$ kob install -env TheOrgBook --version 0.0.3
+Creating Dev environment for von-network
 Creating Dev environment for von-network
 from https://github.com/EtricKombat/von-network
 version :0.0.3 
-bash: export: `Dev_von-network=/home/kob-user/Dev_': not a valid identifier
+bash: export: `Dev_von-network=/home/kob-user/Dev_von-network': not a valid identifier
 Installing Git
-[sudo] password for kob-user: 
+Setting up man-db (2.8.3-2ubuntu0.1) ...
+Updating database of manual pages ...
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 git is already the newest version (1:2.17.1-1ubuntu0.7).
 The following packages were automatically installed and are no longer required:
-  bridge-utils libllvm7 ubuntu-fan
+  aufs-tools bridge-utils cgroupfs-mount libllvm7 linux-headers-5.3.0-51
+  linux-headers-5.3.0-51-generic linux-image-5.3.0-51-generic
+  linux-modules-5.3.0-51-generic linux-modules-extra-5.3.0-51-generic pigz
+  ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
 Installing Python
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 software-properties-common is already the newest version (0.96.24.32.13).
 The following packages were automatically installed and are no longer required:
-  bridge-utils libllvm7 ubuntu-fan
+  aufs-tools bridge-utils cgroupfs-mount libllvm7 linux-headers-5.3.0-51
+  linux-headers-5.3.0-51-generic linux-image-5.3.0-51-generic
+  linux-modules-5.3.0-51-generic linux-modules-extra-5.3.0-51-generic pigz
+  ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -32,30 +39,31 @@ Building dependency tree
 Reading state information... Done
 python-pip is already the newest version (9.0.1-2.3~ubuntu1.18.04.1).
 The following packages were automatically installed and are no longer required:
-  bridge-utils libllvm7 ubuntu-fan
+  aufs-tools bridge-utils cgroupfs-mount libllvm7 linux-headers-5.3.0-51
+  linux-headers-5.3.0-51-generic linux-image-5.3.0-51-generic
+  linux-modules-5.3.0-51-generic linux-modules-extra-5.3.0-51-generic pigz
+  ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
 Traceback (most recent call last):
   File "/usr/local/bin/pip", line 7, in <module>
     from pip._internal.cli.main import main
-ModuleNotFoundError: No module named 'pip._internal'
+ModuleNotFoundError: No module named 'pip'
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 Package 'docker-engine' is not installed, so not removed
 Package 'docker' is not installed, so not removed
 Package 'docker.io' is not installed, so not removed
+Package 'docker-ce-cli' is not installed, so not removed
+Package 'docker-ce' is not installed, so not removed
 The following packages were automatically installed and are no longer required:
-  aufs-tools bridge-utils cgroupfs-mount libllvm7 pigz ubuntu-fan
+  aufs-tools bridge-utils cgroupfs-mount libllvm7 linux-headers-5.3.0-51
+  linux-headers-5.3.0-51-generic linux-image-5.3.0-51-generic
+  linux-modules-5.3.0-51-generic linux-modules-extra-5.3.0-51-generic pigz
+  ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
-The following packages will be REMOVED:
-  docker-ce docker-ce-cli
-0 upgraded, 0 newly installed, 2 to remove and 22 not upgraded.
-After this operation, 281 MB disk space will be freed.
-(Reading database ... 200279 files and directories currently installed.)
-Removing docker-ce (5:19.03.11~3-0~ubuntu-bionic) ...
-Removing docker-ce-cli (5:19.03.11~3-0~ubuntu-bionic) ...
-Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+0 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
 # Executing docker install script, commit: 26ff363bcf3b3f5a00498ac43694bf1c7d9ce16c
 + sh -c apt-get update -qq >/dev/null
 W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
@@ -170,8 +178,8 @@ For more examples and ideas, visit:
 Installing Docker-Compose
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   638  100   638    0     0    694      0 --:--:-- --:--:-- --:--:--   694
-100 11.6M  100 11.6M    0     0   110k      0  0:01:48  0:01:48 --:--:--  106k
+100   638  100   638    0     0    373      0  0:00:01  0:00:01 --:--:--   373
+100 11.6M  100 11.6M    0     0  64523      0  0:03:09  0:03:09 --:--:-- 51850
 Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
 Executing: /lib/systemd/systemd-sysv-install enable docker
 Docker Version
@@ -193,28 +201,30 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 The following packages were automatically installed and are no longer required:
-  bridge-utils gyp libhttp-parser2.7.1 libjs-async libjs-inherits
-  libjs-node-uuid libllvm7 libuv1 libuv1-dev nodejs-doc ubuntu-fan
+  bridge-utils gyp javascript-common libhttp-parser2.7.1 libjs-async
+  libjs-inherits libjs-jquery libjs-node-uuid libjs-underscore libllvm7 libuv1
+  libuv1-dev linux-headers-5.3.0-51 linux-headers-5.3.0-51-generic
+  linux-image-5.3.0-51-generic linux-modules-5.3.0-51-generic
+  linux-modules-extra-5.3.0-51-generic nodejs-doc ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
 The following packages will be REMOVED:
-  libssl1.0-dev node-abbrev node-ansi node-ansi-color-table node-archy
-  node-async node-balanced-match node-block-stream node-brace-expansion
-  node-builtin-modules node-combined-stream node-concat-map node-cookie-jar
-  node-delayed-stream node-forever-agent node-form-data node-fs.realpath
-  node-fstream node-fstream-ignore node-github-url-from-git node-glob
-  node-graceful-fs node-gyp node-hosted-git-info node-inflight node-inherits
-  node-ini node-is-builtin-module node-isexe node-json-stringify-safe
-  node-lockfile node-lru-cache node-mime node-minimatch node-mkdirp
-  node-mute-stream node-node-uuid node-nopt node-normalize-package-data
-  node-npmlog node-once node-osenv node-path-is-absolute node-pseudomap
-  node-qs node-read node-read-package-json node-request node-retry node-rimraf
-  node-semver node-sha node-slide node-spdx-correct node-spdx-expression-parse
-  node-spdx-license-ids node-tar node-tunnel-agent node-underscore
-  node-validate-npm-package-license node-which node-wrappy node-yallist nodejs
-  nodejs-dev npm
-0 upgraded, 0 newly installed, 66 to remove and 22 not upgraded.
+  libssl1.0-dev node-abbrev node-ansi node-ansi-color-table node-archy node-async
+  node-balanced-match node-block-stream node-brace-expansion node-builtin-modules
+  node-combined-stream node-concat-map node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fs.realpath node-fstream
+  node-fstream-ignore node-github-url-from-git node-glob node-graceful-fs
+  node-gyp node-hosted-git-info node-inflight node-inherits node-ini
+  node-is-builtin-module node-isexe node-json-stringify-safe node-lockfile
+  node-lru-cache node-mime node-minimatch node-mkdirp node-mute-stream
+  node-node-uuid node-nopt node-normalize-package-data node-npmlog node-once
+  node-osenv node-path-is-absolute node-pseudomap node-qs node-read
+  node-read-package-json node-request node-retry node-rimraf node-semver node-sha
+  node-slide node-spdx-correct node-spdx-expression-parse node-spdx-license-ids
+  node-tar node-tunnel-agent node-underscore node-validate-npm-package-license
+  node-which node-wrappy node-yallist nodejs nodejs-dev npm
+0 upgraded, 0 newly installed, 66 to remove and 23 not upgraded.
 After this operation, 40.1 MB disk space will be freed.
-(Reading database ... 200279 files and directories currently installed.)
+(Reading database ... 228262 files and directories currently installed.)
 Removing npm (3.5.2-0ubuntu4) ...
 Removing node-gyp (3.6.2-1ubuntu1) ...
 Removing nodejs-dev (8.10.0~dfsg-2ubuntu0.4) ...
@@ -287,47 +297,48 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 The following packages were automatically installed and are no longer required:
-  bridge-utils libllvm7 ubuntu-fan
+  bridge-utils libllvm7 linux-headers-5.3.0-51 linux-headers-5.3.0-51-generic
+  linux-image-5.3.0-51-generic linux-modules-5.3.0-51-generic
+  linux-modules-extra-5.3.0-51-generic ubuntu-fan
 Use 'sudo apt autoremove' to remove them.
 The following additional packages will be installed:
   node-abbrev node-ansi node-ansi-color-table node-archy node-async
-  node-balanced-match node-block-stream node-brace-expansion
-  node-builtin-modules node-combined-stream node-concat-map node-cookie-jar
-  node-delayed-stream node-forever-agent node-form-data node-fs.realpath
-  node-fstream node-fstream-ignore node-github-url-from-git node-glob
-  node-graceful-fs node-hosted-git-info node-inflight node-inherits node-ini
+  node-balanced-match node-block-stream node-brace-expansion node-builtin-modules
+  node-combined-stream node-concat-map node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fs.realpath node-fstream
+  node-fstream-ignore node-github-url-from-git node-glob node-graceful-fs
+  node-hosted-git-info node-inflight node-inherits node-ini
   node-is-builtin-module node-isexe node-json-stringify-safe node-lockfile
   node-lru-cache node-mime node-minimatch node-mkdirp node-mute-stream
   node-node-uuid node-nopt node-normalize-package-data node-npmlog node-once
   node-osenv node-path-is-absolute node-pseudomap node-qs node-read
-  node-read-package-json node-request node-retry node-rimraf node-semver
-  node-sha node-slide node-spdx-correct node-spdx-expression-parse
-  node-spdx-license-ids node-tar node-tunnel-agent node-underscore
-  node-validate-npm-package-license node-which node-wrappy node-yallist
+  node-read-package-json node-request node-retry node-rimraf node-semver node-sha
+  node-slide node-spdx-correct node-spdx-expression-parse node-spdx-license-ids
+  node-tar node-tunnel-agent node-underscore node-validate-npm-package-license
+  node-which node-wrappy node-yallist
 Suggested packages:
   node-hawk node-aws-sign node-oauth-sign node-http-signature debhelper
 The following NEW packages will be installed:
-  libssl1.0-dev node-abbrev node-ansi node-ansi-color-table node-archy
-  node-async node-balanced-match node-block-stream node-brace-expansion
-  node-builtin-modules node-combined-stream node-concat-map node-cookie-jar
-  node-delayed-stream node-forever-agent node-form-data node-fs.realpath
-  node-fstream node-fstream-ignore node-github-url-from-git node-glob
-  node-graceful-fs node-gyp node-hosted-git-info node-inflight node-inherits
-  node-ini node-is-builtin-module node-isexe node-json-stringify-safe
-  node-lockfile node-lru-cache node-mime node-minimatch node-mkdirp
-  node-mute-stream node-node-uuid node-nopt node-normalize-package-data
-  node-npmlog node-once node-osenv node-path-is-absolute node-pseudomap
-  node-qs node-read node-read-package-json node-request node-retry node-rimraf
-  node-semver node-sha node-slide node-spdx-correct node-spdx-expression-parse
-  node-spdx-license-ids node-tar node-tunnel-agent node-underscore
-  node-validate-npm-package-license node-which node-wrappy node-yallist nodejs
-  nodejs-dev npm
-0 upgraded, 66 newly installed, 0 to remove and 22 not upgraded.
+  libssl1.0-dev node-abbrev node-ansi node-ansi-color-table node-archy node-async
+  node-balanced-match node-block-stream node-brace-expansion node-builtin-modules
+  node-combined-stream node-concat-map node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fs.realpath node-fstream
+  node-fstream-ignore node-github-url-from-git node-glob node-graceful-fs
+  node-gyp node-hosted-git-info node-inflight node-inherits node-ini
+  node-is-builtin-module node-isexe node-json-stringify-safe node-lockfile
+  node-lru-cache node-mime node-minimatch node-mkdirp node-mute-stream
+  node-node-uuid node-nopt node-normalize-package-data node-npmlog node-once
+  node-osenv node-path-is-absolute node-pseudomap node-qs node-read
+  node-read-package-json node-request node-retry node-rimraf node-semver node-sha
+  node-slide node-spdx-correct node-spdx-expression-parse node-spdx-license-ids
+  node-tar node-tunnel-agent node-underscore node-validate-npm-package-license
+  node-which node-wrappy node-yallist nodejs nodejs-dev npm
+0 upgraded, 66 newly installed, 0 to remove and 23 not upgraded.
 Need to get 0 B/8,526 kB of archives.
 After this operation, 40.1 MB of additional disk space will be used.
 Extracting templates from packages: 100%
 Selecting previously unselected package libssl1.0-dev:amd64.
-(Reading database ... 196543 files and directories currently installed.)
+(Reading database ... 224526 files and directories currently installed.)
 Preparing to unpack .../00-libssl1.0-dev_1.0.2n-1ubuntu5.3_amd64.deb ...
 Unpacking libssl1.0-dev:amd64 (1.0.2n-1ubuntu5.3) ...
 Selecting previously unselected package nodejs.
@@ -593,6 +604,129 @@ Setting up node-tar (2.2.1-1) ...
 Setting up node-gyp (3.6.2-1ubuntu1) ...
 Setting up npm (3.5.2-0ubuntu4) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
-sudo: /home/kob-user/Dev_von-network/von-network/manage: command not found
-sudo: /home/kob-user/Dev_von-network/von-network/manage: command not found
+Unable to find image 'codenvy/che-ip:latest' locally
+latest: Pulling from codenvy/che-ip
+e110a4a17941: Pulling fs layer
+30e5e9c82372: Pulling fs layer
+30e5e9c82372: Verifying Checksum
+30e5e9c82372: Download complete
+e110a4a17941: Verifying Checksum
+e110a4a17941: Download complete
+e110a4a17941: Pull complete
+30e5e9c82372: Pull complete
+Digest: sha256:56e6aa31969090487ca1ce9e36248ad9389ce3b62fca68a0dc99b2ceeaa02f7f
+Status: Downloaded newer image for codenvy/che-ip:latest
+WARNING: The GENESIS_URL variable is not set. Defaulting to a blank string.
+WARNING: The ANONYMOUS variable is not set. Defaulting to a blank string.
+WARNING: The LEDGER_SEED variable is not set. Defaulting to a blank string.
+WARNING: The LEDGER_CACHE_PATH variable is not set. Defaulting to a blank string.
+WARNING: The WEB_ANALYTICS_SCRIPT variable is not set. Defaulting to a blank string.
+WARNING: The INFO_SITE_TEXT variable is not set. Defaulting to a blank string.
+WARNING: The INFO_SITE_URL variable is not set. Defaulting to a blank string.
+Removing network von_von
+WARNING: Network von_von not found.
+Removing volume von_client-cli
+WARNING: Volume von_client-cli not found.
+Removing volume von_client-data
+WARNING: Volume von_client-data not found.
+Removing volume von_webserver-cli
+WARNING: Volume von_webserver-cli not found.
+Removing volume von_node1-data
+WARNING: Volume von_node1-data not found.
+Removing volume von_node2-data
+WARNING: Volume von_node2-data not found.
+Removing volume von_node3-data
+WARNING: Volume von_node3-data not found.
+Removing volume von_node4-data
+WARNING: Volume von_node4-data not found.
+Removing volume von_nodes-data
+WARNING: Volume von_nodes-data not found.
+Sending build context to Docker daemon    172kB
+Step 1/7 : FROM bcgovimages/von-image:py35-1.8-4
+py35-1.8-4: Pulling from bcgovimages/von-image
+8ee29e426c26: Pull complete 
+6e83b260b73b: Pull complete 
+e26b65fd1143: Pull complete 
+40dca07f8222: Pull complete 
+b420ae9e10b3: Pull complete 
+d9e06e8d6130: Pull complete 
+422115d6ea61: Pull complete 
+f738a8d2d1c4: Pull complete 
+4ef0a8bd2698: Pull complete 
+06729a7b1407: Pull complete 
+553205b6f28f: Pull complete 
+a06148e3266f: Pull complete 
+e22762f9e376: Pull complete 
+b3f9b5a683e3: Pull complete 
+7d70b4c643c3: Pull complete 
+Digest: sha256:841946668fa059c28649f576391cc445bcef76695d49fac9ca192510c777c65b
+Status: Downloaded newer image for bcgovimages/von-image:py35-1.8-4
+ ---> 0e398fd84cbe
+Step 2/7 : ENV LOG_LEVEL ${LOG_LEVEL:-info}
+ ---> Running in 80d47f3a6318
+Removing intermediate container 80d47f3a6318
+ ---> f13166c72753
+Step 3/7 : ENV RUST_LOG ${RUST_LOG:-warning}
+ ---> Running in 22f1d7bdff2d
+Removing intermediate container 22f1d7bdff2d
+ ---> 4014b569eefb
+Step 4/7 : ADD server/requirements.txt server/
+ ---> a9461dd53511
+Step 5/7 : RUN pip install --no-cache-dir -r server/requirements.txt
+ ---> Running in acd95027d6cd
+Collecting git+https://github.com/Supervisor/supervisor.git@0cc0a3989211996d502a0ac46c0ea320e1dec928 (from -r server/requirements.txt (line 9))
+  Cloning https://github.com/Supervisor/supervisor.git (to 0cc0a3989211996d502a0ac46c0ea320e1dec928) to /tmp/pip-br7245om-build
+  Could not find a tag or branch '0cc0a3989211996d502a0ac46c0ea320e1dec928', assuming commit.
+Collecting pyyaml>=4.2b4 (from -r server/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz (269kB)
+Collecting aiodns~=1.1.0 (from -r server/requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/bd/f5/b69cb930fd5ab0569396659afe3f3c0d37d4098e5d0ba6afdf6fd9388cb0/aiodns-1.1.1-py2.py3-none-any.whl
+Requirement already satisfied: aiohttp~=3.3.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from -r server/requirements.txt (line 3))
+Collecting aiohttp-jinja2~=1.1.0 (from -r server/requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/6d/c6/c70126523a3ac1b00b241bd82b814d815da6af27451ea43bf9e4849acaf6/aiohttp_jinja2-1.1.2-py3-none-any.whl
+Collecting aiosqlite~=0.6.0 (from -r server/requirements.txt (line 5))
+  Downloading https://files.pythonhosted.org/packages/44/3d/eb39aa906e4c520fa5ae08f5759a77e9ea1196c604fa842215e6f25162aa/aiosqlite-0.6.0.tar.gz
+Requirement already satisfied: base58~=1.0.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from -r server/requirements.txt (line 6))
+Requirement already satisfied: cchardet~=2.1.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from -r server/requirements.txt (line 7))
+Requirement already satisfied: rlp~=0.6.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from -r server/requirements.txt (line 8))
+Collecting meld3>=1.0.0 (from supervisor==4.0.0.dev0->-r server/requirements.txt (line 9))
+  Downloading https://files.pythonhosted.org/packages/d8/5b/65a655a1090d98c8d604ac9e97d5df3a2ae276f881d4e2911ba38800f2ed/meld3-2.0.1-py2.py3-none-any.whl
+Requirement already satisfied: pycares>=1.0.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiodns~=1.1.0->-r server/requirements.txt (line 2))
+Requirement already satisfied: multidict<5.0,>=4.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Requirement already satisfied: idna-ssl>=1.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Requirement already satisfied: chardet<4.0,>=2.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Requirement already satisfied: async-timeout<4.0,>=3.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Requirement already satisfied: yarl<2.0,>=1.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Requirement already satisfied: attrs>=17.3.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Collecting jinja2>=2.10.1 (from aiohttp-jinja2~=1.1.0->-r server/requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/30/9e/f663a2aa66a09d838042ae1a2c5659828bb9b41ea3a6efa20a20fd92b121/Jinja2-2.11.2-py2.py3-none-any.whl (125kB)
+Requirement already satisfied: cffi>=1.5.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from pycares>=1.0.0->aiodns~=1.1.0->-r server/requirements.txt (line 2))
+Requirement already satisfied: idna>=2.0 in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from idna-ssl>=1.0->aiohttp~=3.3.0->-r server/requirements.txt (line 3))
+Collecting MarkupSafe>=0.23 (from jinja2>=2.10.1->aiohttp-jinja2~=1.1.0->-r server/requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/6e/57/d40124076756c19ff2269678de7ae25a14ebbb3f6314eb5ce9477f191350/MarkupSafe-1.1.1-cp35-cp35m-manylinux1_x86_64.whl
+Requirement already satisfied: pycparser in ./.pyenv/versions/3.5.6/lib/python3.5/site-packages (from cffi>=1.5.0->pycares>=1.0.0->aiodns~=1.1.0->-r server/requirements.txt (line 2))
+Installing collected packages: pyyaml, aiodns, MarkupSafe, jinja2, aiohttp-jinja2, aiosqlite, meld3, supervisor
+  Running setup.py install for pyyaml: started
+    Running setup.py install for pyyaml: finished with status 'done'
+  Found existing installation: aiodns 1.2.0
+    Uninstalling aiodns-1.2.0:
+      Successfully uninstalled aiodns-1.2.0
+  Found existing installation: aiosqlite 0.7.0
+    Uninstalling aiosqlite-0.7.0:
+      Successfully uninstalled aiosqlite-0.7.0
+  Running setup.py install for aiosqlite: started
+    Running setup.py install for aiosqlite: finished with status 'done'
+  Running setup.py install for supervisor: started
+    Running setup.py install for supervisor: finished with status 'done'
+Successfully installed MarkupSafe-1.1.1 aiodns-1.1.1 aiohttp-jinja2-1.1.2 aiosqlite-0.6.0 jinja2-2.11.2 meld3-2.0.1 pyyaml-5.3.1 supervisor-4.0.0.dev0
+You are using pip version 9.0.3, however version 20.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Removing intermediate container acd95027d6cd
+ ---> b3e85c796af8
+Step 6/7 : ADD --chown=indy:indy indy_config.py /etc/indy/
+ ---> e76f4093e00e
+Step 7/7 : ADD --chown=indy:indy . $HOME
+ ---> 48e4904f7382
+Successfully built 48e4904f7382
+Successfully tagged von-network-base:latest
 Dev environment for von-network created successfully
