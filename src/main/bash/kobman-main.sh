@@ -74,7 +74,8 @@ function kob {
 	if [ -n "$cmd_found" ]; then
 		# It's available as a shell function
 		if [ "$converted_cmd_name" = "install" ]; then
-			__kobman_identify_parameter
+			__kobman_identify_parameter || return 1
+			__kob_"$converted_cmd_name" "${qualifier2}" "${qualifier4}"
 		else
 			__kob_"$converted_cmd_name" "$2" "$3" "$4"
 			final_rc=$?
@@ -110,7 +111,7 @@ function __kobman_identify_parameter
 		__kobman_check_if_version_exists "${qualifier2}" "$KOBMAN_VERSION" || return 1
 	fi
 
-	__kob_"$converted_cmd_name" "${qualifier2}" "${qualifier4}"
-	 
+	#__kob_"$converted_cmd_name" "${qualifier2}" "${qualifier4}"
+
 
 }

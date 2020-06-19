@@ -12,7 +12,7 @@ function __kobman_validate_environment
 {
 	local environment_name=$1
 	echo ${environment_name} > $KOBMAN_DIR/var/current
-	cat $KOBMAN_DIR/var/list.txt | grep -w "$environment_name" > /dev/null	
+	cat $KOBMAN_DIR/var/list.txt | grep -w "$environment_name" > /dev/null
 	if [ "$?" != "0" ]; then
 
 		__kobman_echo_debug "environment does not exist"
@@ -66,7 +66,7 @@ function __kobman_create_environment_directory
                 	source "${KOBMAN_DIR}/envs/kob_env_${environment_name}/${version_id}/kobman-${environment_name}.sh"
 			__kobman_install_"${environment_name}" "${environment_name}" "${version_id}"
 			cd ~
-               	elif [ -d "$version_id" ]  && [ $(cat $destdir) != "$version_id" ]
+		elif [[ -d "$version_id" && $(cat $destdir) != "$version_id" ]]
 		then
 			cd ~
 			__kobman_echo_no_colour "Re-installing  https://github.com/${KOBMAN_NAMESPACE}/${environment_name} with version:${version_id} "

@@ -37,18 +37,18 @@ function __test_kob_init {
 
   fi
 
-  __kobman_echo_no_colour "creating and sourcing dummyenv files..."
+  __kobman_echo_no_colour "creating and sourcing $kobman_env_name files..."
   touch $KOBMAN_DIR/var/kobman_env_$kobman_env_name.proc
 
-  fake_publish_dummyenv
-
-  create_install_dummyenv_script > $path_to_kob_envs/kobman-$kobman_env_name.sh
-
-  touch $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh
-  create_dummyenv_validation_script > $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh
-
-  source $path_to_kob_envs/kobman-$kobman_env_name.sh
-
+  # fake_publish_dummyenv
+  #
+  # create_install_dummyenv_script > $path_to_kob_envs/kobman-$kobman_env_name.sh
+  #
+  # touch $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh
+  # create_dummyenv_validation_script > $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh
+  #
+   source $path_to_kob_envs/kobman-$kobman_env_name.sh
+  #
 
 }
 
@@ -58,7 +58,7 @@ function __test_kob_execute {
   kob install --environment ${kobman_env_name} --version $version > ~/output.txt
 
 
-  cat ~/output.txt | grep -q "dummyenv installed"
+  cat ~/output.txt | grep -q "Dev environment for von-network created successfully"
 
   if [[ "$?" == "0" ]]; then
 

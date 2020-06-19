@@ -13,7 +13,7 @@ function __kobman_install_von-network
 		cd ~
 		mkdir -p Dev_${environment_name}
 		cd Dev_${environment_name}
-		export Dev_${environment_name}=$PWD
+	#	export Dev_${environment_name}=$PWD
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 		__kobman_install_dependancies
@@ -29,7 +29,7 @@ function __kobman_install_von-network
 		cd ~
 		mkdir -p Dev_${environment_name}
 		cd Dev_${environment_name}
-		export Dev_${environment_name}=$PWD
+	#	export Dev_${environment_name}=$PWD
 		mkdir -p test/ dependency/
 		git clone https://github.com/${KOBMAN_NAMESPACE}/${environment_name} 2> /dev/null
 		__kobman_install_dependancies
