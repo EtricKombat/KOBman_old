@@ -1,14 +1,16 @@
 #!/bin/sh
 status="true"
+kobman_env_name=$1
+$version=$2
+
 function __test_kob_von-network_run
 {
   __test_kob_init || return 1
-
   __test_kob_execute
-
   __test_kob_validate || return 1
   __test_kob_von-network_cleanup
   __test_kob_output
+
 }
 function __test_kob_init
 {
@@ -29,12 +31,11 @@ function __test_kob_execute
 {
 
   touch ~/dummy.txt
-  echo "output of execute of von-network" > ~/dummy.txt
-
-
-
+  #echo "output of execute of von-network" > ~/dummy.txt
+  kob install -env "$kobman_env_name" --version "$version"  > ~/dummy.txt
 
 }
+
 function __test_kob_validate
 {
 

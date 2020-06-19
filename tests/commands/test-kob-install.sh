@@ -74,8 +74,8 @@ function __test_kob_execute {
 
 
 function __test_kob_validate {
-  __kobman_echo_no_colour "validating install command...."
-  . $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh  > ~/tmp.txt
+  __kobman_echo_no_colour "validating ${kobman_env_name} environment "
+  . $path_to_kob_env_tests/test-kob-${kobman_env_name}.sh "$kobman_env_name" "$version" > ~/tmp.txt
 
 
 
