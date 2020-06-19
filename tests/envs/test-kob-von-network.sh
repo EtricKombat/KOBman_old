@@ -32,7 +32,7 @@ function __test_kob_execute
 
   touch ~/dummy.txt
   #echo "output of execute of von-network" > ~/dummy.txt
-  kob install -env "$kobman_env_name" --version "$version"  > ~/dummy.txt
+#  kob install -env "$kobman_env_name" --version "$version"  > ~/dummy.txt
 
 }
 
