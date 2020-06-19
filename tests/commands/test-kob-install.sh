@@ -142,62 +142,62 @@ function __test_kob_cleanup()
 
 
 
-
-function create_install_dummyenv_script(){
-
-cat <<EOF
-#!/bin/bash
-
-
-function __kobman_install_dummyenv
-{
-
-  cd ~
-  if [ ! -d "Dev_dummyenv" ]; then
-
-    __kobman_create_dev_environment
-    __kobman_echo_white "dummyenv installed"
-  else
-
-    rm -rf ~/Dev_dummyenv
-    __kobman_create_dev_environment
-    __kobman_echo_white "dummyenv installed"
-
-  fi
-}
-function __kobman_uninstall_dummyenv
-{
-    __kobman_echo_white "uninstall"
-}
-function __kobman_update_dummyenv
-{
-    __kobman_echo_white "update"
-}
-function __kobman_upgrade_dummyenv
-{
-    __kobman_echo_white "upgraded"
-
-}
-function __kobman_start_dummyenv
-{
-    __kobman_echo_white "start"
-}
-function __kobman_stop_dummyenv
-{
-    __kobman_echo_white "stop"
-}
-function __kobman_create_dev_environment
-{
-
-	cd ~
-	mkdir -p Dev_dummyenv
-	cd Dev_dummyenv
-	export DUMMYENV_DEV_DIR=$PWD
-	mkdir -p test/ dependency/
-}
-
-EOF
-}
+#
+# function create_install_dummyenv_script(){
+#
+# cat <<EOF
+# #!/bin/bash
+#
+#
+# function __kobman_install_dummyenv
+# {
+#
+#   cd ~
+#   if [ ! -d "Dev_dummyenv" ]; then
+#
+#     __kobman_create_dev_environment
+#     __kobman_echo_white "dummyenv installed"
+#   else
+#
+#     rm -rf ~/Dev_dummyenv
+#     __kobman_create_dev_environment
+#     __kobman_echo_white "dummyenv installed"
+#
+#   fi
+# }
+# function __kobman_uninstall_dummyenv
+# {
+#     __kobman_echo_white "uninstall"
+# }
+# function __kobman_update_dummyenv
+# {
+#     __kobman_echo_white "update"
+# }
+# function __kobman_upgrade_dummyenv
+# {
+#     __kobman_echo_white "upgraded"
+#
+# }
+# function __kobman_start_dummyenv
+# {
+#     __kobman_echo_white "start"
+# }
+# function __kobman_stop_dummyenv
+# {
+#     __kobman_echo_white "stop"
+# }
+# function __kobman_create_dev_environment
+# {
+#
+# 	cd ~
+# 	mkdir -p Dev_dummyenv
+# 	cd Dev_dummyenv
+# 	export DUMMYENV_DEV_DIR=$PWD
+# 	mkdir -p test/ dependency/
+# }
+#
+# EOF
+# }
 
 function create_dummyenv_validation_script()
 {
