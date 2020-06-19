@@ -143,17 +143,17 @@ function __kobman_git_install {
 
 	__kobman_echo_yellow "Installing Git"
 	sudo dpkg --configure -a
-	sudo apt install git -y
+	sudo apt-get install git -y
 }
 
 function __kobman_python_install {
 
 	__kobman_echo_yellow "Installing Python"
-	sudo apt install software-properties-common -y
-  sudo apt install Python -y
+	sudo apt-get install software-properties-common -y
+  sudo apt-get install Python -y
   #sudo apt install Python3.7 -y
-  sudo apt install python-pip -y
-	pip install --upgrade pip
+  sudo apt-get install python-pip -y
+	sudo pip install --upgrade pip
 	sudo ln -sfn /usr/bin/python3.7 /usr/bin/python
 }
 
@@ -221,10 +221,10 @@ function __kobman_npm_install {
 function __kobman_visual_studio_install {
 
 	__kobman_echo_yellow "Installing Visual-Studio"
-	sudo apt install software-properties-common apt-transport-https wget
+	sudo apt-get install software-properties-common apt-transport-https wget
 	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-	sudo apt install code
+	sudo apt-get install code
 
 }
 
