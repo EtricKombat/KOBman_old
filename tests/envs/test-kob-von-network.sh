@@ -43,7 +43,7 @@ function __test_kob_validate
   if [[ "$?" != "0" ]]; then
     status="false"
     __test_kob_output
-    __test_kob_von-networkcleanup
+    __test_kob_von-network_cleanup
     return 1
   fi
 
@@ -51,18 +51,18 @@ function __test_kob_validate
 
     status="false"
     __test_kob_output
-    __test_kob_von-networkcleanup
+    __test_kob_von-network_cleanup
     return 1
 
   fi
 
-  commands="uninstall update upgrade start stop"
+  commands="install uninstall update upgrade start stop"
   for i in $commands; do
       __kobman_$i_von-network | grep $i
       if [[ "$?" != "0" ]]; then
           __kobman_echo_white "error with $i"
           status="false"
-          __test_kob_von-networkcleanup
+          __test_kob_von-network_cleanup
           __test_kob_output
           return 1
       fi
