@@ -129,17 +129,14 @@ function __test_kob_validate {
 }
 
 
-
-
-
 function __test_kob_cleanup()
 {
 
   rm ~/output.txt ~/tmp.txt  $path_to_kob_envs/kobman-$kobman_env_name.sh $KOBMAN_DIR/var/kobman_env_$kobman_env_name.proc
   rm -rf ~/Dev_$kobman_env_name
   rm -rf $KOBMAN_DIR/envs/kob_env_$kobman_env_name
-  rm $path_to_kob_env_tests/test-kob-$kobman_env_name.sh
-  sed -i "s/dummyenv,0.0.2,0.0.3,0.0.5,0.0.7,0.0.9//g" $KOBMAN_DIR/var/list.txt
+  #rm $path_to_kob_env_tests/test-kob-$kobman_env_name.sh
+  # sed -i "s/dummyenv,0.0.2,0.0.3,0.0.5,0.0.7,0.0.9//g" $KOBMAN_DIR/var/list.txt
 
 }
 
@@ -300,21 +297,21 @@ cat <<EOF
 
 EOF
 }
-
-function fake_publish_dummyenv
-{
-
-  rm $KOBMAN_DIR/var/list.txt
-
-  __kobman_secure_curl https://raw.githubusercontent.com/${KOBMAN_NAMESPACE}/KOBman/master/dist/list.txt > $KOBMAN_DIR/var/list.txt
-
-
-  __kobman_echo_no_colour "dummyenv,0.0.2,0.0.3,0.0.5,0.0.7,0.0.9" >> $KOBMAN_DIR/var/list.txt
-
-
-  source $KOBMAN_DIR/bin/kobman-init.sh
-
-}
+#
+# function fake_publish_dummyenv
+# {
+#
+#   rm $KOBMAN_DIR/var/list.txt
+#
+#   __kobman_secure_curl https://raw.githubusercontent.com/${KOBMAN_NAMESPACE}/KOBman/master/dist/list.txt > $KOBMAN_DIR/var/list.txt
+#
+#
+#   __kobman_echo_no_colour "dummyenv,0.0.2,0.0.3,0.0.5,0.0.7,0.0.9" >> $KOBMAN_DIR/var/list.txt
+#
+#
+#   source $KOBMAN_DIR/bin/kobman-init.sh
+#
+# }
 function __test_kob_run
 {
   if [[ $status == "true" ]]; then
