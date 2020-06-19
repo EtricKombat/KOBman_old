@@ -149,9 +149,10 @@ function __kobman_git_install {
 function __kobman_python_install {
 
 	__kobman_echo_yellow "Installing Python"
+	sudo apt-get update -y
 	sudo apt-get install software-properties-common -y
-  sudo apt-get install Python -y
-  #sudo apt install Python3.7 -y
+  #sudo apt-get install Python -y
+  sudo apt install Python3.7 -y
   sudo apt-get install python-pip -y
 	sudo pip install --upgrade pip
 	sudo ln -sfn /usr/bin/python3.7 /usr/bin/python
