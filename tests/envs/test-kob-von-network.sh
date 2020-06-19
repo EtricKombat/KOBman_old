@@ -1,7 +1,7 @@
 #!/bin/sh
 status="true"
 kobman_env_name=$1
-$version=$2
+version=$2
 
 function __test_kob_von-network_run
 {
