@@ -1,6 +1,6 @@
 kob-user@kobuser-VirtualBox:~$ kob list
 Available environments and their respective version numbers
----------------------------------------------------------------
+--------------------------------------------------------------
 von-network 0.0.2 0.0.3 0.0.5 0.0.7
 TheOrgBook 0.0.2 0.0.3 0.0.5 0.0.7
 greenlight 0.0.2 0.0.3 0.0.5 0.0.7
@@ -17,7 +17,7 @@ bash: /home/kob-user/.kobman/envs/kob_env_aries-agent-test-harness/0.0.9/kobman-
 Creating Dev environment for von_network
 Creating Dev environment for von-network
 from https://github.com/hyperledgerkochi/von-network
-version :0.0.9 
+version :0.0.9
 Installing Git
 Reading package lists... Done
 Building dependency tree       
@@ -238,7 +238,7 @@ Docker Login
 Removing login credentials for https://index.docker.io/v1/
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
 Username: 34561991
-Password: 
+Password:
 WARNING! Your password will be stored unencrypted in /home/kob-user/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
@@ -675,9 +675,9 @@ Step 8/8 : ADD --chown=indy:indy . $HOME
 Successfully built 6b130ee39d61
 Successfully tagged von-network-base:latest
 Dev environment for von-network created successfully
-Creating Dev environment for aries-agent-test-harness 
+Creating Dev environment for aries-agent-test-harness
 from https://github.com/hyperledgerkochi/aries-agent-test-harness
-version :0.0.9 
+version :0.0.9
 bash: export: `Dev_aries-agent-test-harness': not a valid identifier
 bash: export: `=': not a valid identifier
 bash: export: `/home/kob-user/Dev_aries-agent-test-harness': not a valid identifier
