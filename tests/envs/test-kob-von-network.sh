@@ -59,7 +59,7 @@ function __test_kob_validate
 
   commands="install uninstall update upgrade start stop"
   for i in $commands; do
-      __kobman_$i_von-network | grep $i
+      __kobman_${i}_von-network | grep $i
       if [[ "$?" != "0" ]]; then
           __kobman_echo_white "error with $i"
           status="false"
