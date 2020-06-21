@@ -1,19 +1,28 @@
 kob-user@kobuser-VirtualBox:~$ ./KOBman/tests/commands/test-kob-install.sh von-network 0.0.3
 checking for kob...
 kob found
-creating and sourcing dummyenv files...
+creating and sourcing von-network files...
 executing install command...
-/home/kob-user/.kobman/envs/kobman-von-network.sh: line 16: export: `Dev_von-network=/home/kob-user/Dev_von-network': not a valid identifier
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-E: Unable to locate package Python
+W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Translations (stable/i18n/Translation-en_IN) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Translations (stable/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11 (stable/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11 (stable/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11-icons-small (stable/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11-icons (stable/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target CNF (stable/cnf/Commands-amd64) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target CNF (stable/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Packages (stable/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Translations (stable/i18n/Translation-en_IN) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target Translations (stable/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11 (stable/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11 (stable/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11-icons-small (stable/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target DEP-11-icons (stable/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target CNF (stable/cnf/Commands-amd64) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
+W: Target CNF (stable/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list:51 and /etc/apt/sources.list.d/docker.list:1
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -72,8 +81,8 @@ W: Target CNF (stable/cnf/Commands-all) is configured multiple times in /etc/apt
 + sh -c docker version
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   638  100   638    0     0   1143      0 --:--:-- --:--:-- --:--:--  1143
-100 11.6M  100 11.6M    0     0  22215      0  0:09:11  0:09:11 --:--:-- 21839
+100   638  100   638    0     0    863      0 --:--:-- --:--:-- --:--:--   864
+100 11.6M  100 11.6M    0     0   357k      0  0:00:33  0:00:33 --:--:--  518k
 Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
 Executing: /lib/systemd/systemd-sysv-install enable docker
 34561991
@@ -89,27 +98,30 @@ WARNING: The LEDGER_CACHE_PATH variable is not set. Defaulting to a blank string
 WARNING: The WEB_ANALYTICS_SCRIPT variable is not set. Defaulting to a blank string.
 WARNING: The INFO_SITE_TEXT variable is not set. Defaulting to a blank string.
 WARNING: The INFO_SITE_URL variable is not set. Defaulting to a blank string.
-Removing von_node1_1     ... done
-Removing von_node3_1     ... done
-Removing von_node4_1     ... done
-Removing von_node2_1     ... done
-Removing von_webserver_1 ... done
 Removing network von_von
+WARNING: Network von_von not found.
 Removing volume von_client-cli
 WARNING: Volume von_client-cli not found.
 Removing volume von_client-data
+WARNING: Volume von_client-data not found.
 Removing volume von_webserver-cli
+WARNING: Volume von_webserver-cli not found.
 Removing volume von_webserver-ledger
+WARNING: Volume von_webserver-ledger not found.
 Removing volume von_node1-data
+WARNING: Volume von_node1-data not found.
 Removing volume von_node2-data
+WARNING: Volume von_node2-data not found.
 Removing volume von_node3-data
+WARNING: Volume von_node3-data not found.
 Removing volume von_node4-data
+WARNING: Volume von_node4-data not found.
 Removing volume von_nodes-data
+WARNING: Volume von_nodes-data not found.
 Installed environments and their version
 ---------------------------------------------
 ~ von-network  0.0.3*
-validating install command....
-test-kob-install success
-./KOBman/tests/commands/test-kob-install.sh: line 362: rn: command not found
-./KOBman/tests/commands/test-kob-install.sh: line 363: syntax error near unexpected token `fi'
-./KOBman/tests/commands/test-kob-install.sh: line 363: `  fi'
+validating von-network environment 
+/home/kob-user/KOBman/tests/envs/test-kob-von-network.sh: line 62: __kobman_-network: command not found
+output of dummy env validate is: failed
+test-kob-install failed
