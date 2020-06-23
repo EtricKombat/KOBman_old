@@ -47,6 +47,23 @@ function __kobman_install_von-network
 
 }
 
+#
+#
+# __kobman_uninstall_von-network()
+# {}
+# __kobman_update_von-network()
+# {}
+# __kobman_upgrade_von-network()
+# {}
+# __kobman_validate_von-network()
+# {}
+# __kobman_start_von-network()
+# {}
+# __kobman_stop_von-network()
+# {}
+
+
+
 
 function __kobman_install_dependancies {
 
