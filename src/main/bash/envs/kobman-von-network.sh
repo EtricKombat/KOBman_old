@@ -177,9 +177,13 @@ function __kobman_python_install {
 function __kobman_docker_install {
 
 	__kobman_echo_yellow "Installing Docker"
-	curl -fsSL https://get.docker.com -o get-docker.sh
-  sh get-docker.sh
-	usermod -aG docker $USER
+	# curl -fsSL https://get.docker.com -o get-docker.sh
+  # sh get-docker.sh
+	# usermod -aG docker $USER
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo apt-key fingerprint 0EBFCD88
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
+	sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 	__kobman_echo_yellow "Installing Docker-Compose"
 	curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
