@@ -70,7 +70,7 @@ function __kobman_install_dependancies {
 	#__kobman_check_proxy
 	#__kobman_ubuntu_update_upgrade
   __kobman_git_install
-  __kobman_python_install
+  #__kobman_python_install
   __kobman_docker_install
 
 }
@@ -182,12 +182,15 @@ function __kobman_docker_install {
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	#sudo apt-key fingerprint 0EBFCD88
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
+
+	sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 	sudo usermod -aG docker ${USER}
-	#sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 	__kobman_echo_yellow "Installing Docker-Compose"
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
-  sudo systemctl start docker
+
+	sudo systemctl start docker
+
 	__kobman_echo_yellow "Docker Version"
   sudo docker --version
 	__kobman_echo_yellow "Docker-Compose Version"
