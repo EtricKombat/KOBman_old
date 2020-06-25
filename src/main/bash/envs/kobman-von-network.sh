@@ -148,7 +148,7 @@ function __kobman_check_proxy {
         echo "**********************"
         git config --global user.name "${git_uname}"
         git config --global user.email "${emil}"
-	apt install ca-certificates -y
+				apt install ca-certificates -y
         git config --global http.sslVerify false
         git config --global http.proxy http://${uname}:${pword}@${prox}:${port}
 
