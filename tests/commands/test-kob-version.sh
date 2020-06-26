@@ -126,6 +126,8 @@ function __test_kob_validate
 function __test_kob_cleanup
 {
     rm tmp.txt
+    rm ~/output.txt status*.txt $KOBMAN_DIR/var/kobman_env_$environment.proc $path_to_kob_envs/kobman-$environment.sh
+    sed -i "s/dummyenv,0.0.2,0.0.3,0.0.5,0.0.7,0.0.9//g" $KOBMAN_DIR/var/list.txt
 }
 
 function fake_publish_dummyenv
