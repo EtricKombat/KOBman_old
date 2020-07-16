@@ -44,5 +44,5 @@ git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
 git push origin -f $dist_branch
 
-#checkout back to master
-git checkout master
+#checkout back to RF-1.0.1.6.1
+git checkout RF-1.0.1.6.1
