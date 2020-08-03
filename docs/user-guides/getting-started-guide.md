@@ -2,17 +2,30 @@
 
 **Step 1:** Navigate to Readme.md and follow instructions to install KOB 
 
+**TODO :** Snapshots are recommended
+**TODO :** LINK to Readme.md should include 
+
+###### Link to use: https://github.com/hyperledgerkochi/KOBman/blob/master/README.md 
+
  _________________________________________________________
 
 **Step 2:** Show the version of Kob installed and  Step 2:  kob help 
 
+**TODO :** To confirm installation try (kob, kob -V)
+**TODO :** Snapshots are recommended
+
  _________________________________________________________
 
  **Step 3:** kob list 
-
+**TODO :** add head "Available environments"
+**TODO :** Contents : To view the available environments execute the below command . (Commands in highlights 'kob list') 
+**TODO :** To view the available environments 
  _________________________________________________________
 
 **Step 4:** 
+
+**TODO :** add heading "Installing KOBman dev environment"
+**TODO :** Contents : This command help you to create fork of 
 
 Mention what softwares will be installed as a part of the environment you have selected e.g in case of KOBman , mention vscode ,kobman source code along with test cases will be install from your fork. This can also be other environment as well,  Idea is to show a webpage or application running after the installation 
 
