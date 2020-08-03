@@ -32,7 +32,11 @@
 
 **TODO :** add heading "Installing KOBman dev environment"
 
-**TODO :** Contents : This command help you to create fork of 
+**TODO :** Contents : This command help you to create fork of the KOBman reposistory under your own namespace , this also creates a dev environment where you can work from your fork of KOBman .
+
+**TODO :** snapshot of install command
+
+**TODO :**  tree of dev environment 
 
 
 Mention what softwares will be installed as a part of the environment you have selected e.g in case of KOBman , mention vscode ,kobman source code along with test cases will be install from your fork. This can also be other environment as well,  Idea is to show a webpage or application running after the installation 
@@ -40,6 +44,14 @@ Mention what softwares will be installed as a part of the environment you have s
  _________________________________________________________
 
 **Step 5:** 
+
+**TODO :**  Heading "Listing down installed environment and its version"
+
+**TODO :**  content : execute the below command to display the environments installed .
+
+**TODO :** snapshot of  kob status 
+
+**TODO :** content:  explained what '*' is what "~" means 
 
     kob install --env KOBman --version 0.0.2(kob status) 
 
@@ -51,9 +63,13 @@ Mention what softwares will be installed as a part of the environment you have s
 
  _________________________________________________________
 
-**Step 6:** kob status 
+**Step 6:** kob uninstall  
 
-in order for us to understand how kob status works let open up an terminal window and 
+**TODO :**  Heading "Uninstalling KOBman dev environment"
+**TODO :** Content : execute the below command , 
+**TODO :** command highlighted : kob uninstall -env KOBman 
+**TODO :**  When prompted type 'y' if you want to remove the dev environment or type in 'n' if you want the operation to be cancelled.
+**TODO :** snapshot 
 
 -[tree command should be displayed on ~/.kobman/envs/] 
 
