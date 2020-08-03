@@ -2,6 +2,9 @@
 
 **Step 1:** Navigate to Readme.md and follow instructions to install KOB 
 
+![image](https://user-images.githubusercontent.com/54981984/89184062-d22a3600-d5b5-11ea-9938-931162312b58.png)
+![image](https://user-images.githubusercontent.com/54981984/89184089-e0785200-d5b5-11ea-9c10-e6decdf8aaaa.png)
+
 ![image](https://user-images.githubusercontent.com/54981984/89182921-1b798600-d5b4-11ea-8ff2-0d45e8302b4e.png)
 ![image](https://user-images.githubusercontent.com/54981984/89183182-78753c00-d5b4-11ea-946d-becf74d6ae65.png)
 
