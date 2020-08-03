@@ -3,6 +3,7 @@
 **Step 1:** Navigate to Readme.md and follow instructions to install KOB 
 
 **TODO :** Snapshots are recommended
+
 **TODO :** LINK to Readme.md should include 
 
 ###### Link to use: https://github.com/hyperledgerkochi/KOBman/blob/master/README.md 
@@ -12,6 +13,7 @@
 **Step 2:** Show the version of Kob installed and  Step 2:  kob help 
 
 **TODO :** To confirm installation try (kob, kob -V)
+
 **TODO :** Snapshots are recommended
 
  _________________________________________________________
