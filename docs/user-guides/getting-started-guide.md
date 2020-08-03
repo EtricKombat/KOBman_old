@@ -66,9 +66,13 @@ Mention what softwares will be installed as a part of the environment you have s
 **Step 6:** kob uninstall  
 
 **TODO :**  Heading "Uninstalling KOBman dev environment"
+
 **TODO :** Content : execute the below command , 
+
 **TODO :** command highlighted : kob uninstall -env KOBman 
+
 **TODO :**  When prompted type 'y' if you want to remove the dev environment or type in 'n' if you want the operation to be cancelled.
+
 **TODO :** snapshot 
 
 -[tree command should be displayed on ~/.kobman/envs/] 
