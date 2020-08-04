@@ -1,6 +1,6 @@
 #                                                       Demo Script 
 
-**Step 1:** Navigate to Readme.md and follow instructions to install KOB 
+**Step 1:** Follow below instructions to install KOB 
 
 ![image](https://user-images.githubusercontent.com/54981984/89184062-d22a3600-d5b5-11ea-9938-931162312b58.png)
 ![image](https://user-images.githubusercontent.com/54981984/89184089-e0785200-d5b5-11ea-9c10-e6decdf8aaaa.png)
@@ -18,6 +18,9 @@
 
 **TODO :** To confirm installation try (kob, kob -V)
 
+![image](https://user-images.githubusercontent.com/54981984/89267430-da857e00-d654-11ea-9e36-a8ace01bbf8a.png)
+
+![image](https://user-images.githubusercontent.com/54981984/89267513-f7ba4c80-d654-11ea-8d01-5f83f1abacff.png)
 
 ![image](https://user-images.githubusercontent.com/54981984/89198042-36ef8b80-d5ca-11ea-8b78-9104527e8c11.png)
 
