@@ -43,5 +43,5 @@ git add ~/KOBman/dist/*
 git commit -m "Released the version $kob_rel_version"
 git push origin -f $dist_branch
 
-#checkout back to master
-git checkout aries
+#checkout back to aries_dev_test_dev_test
+git checkout aries_dev_test
