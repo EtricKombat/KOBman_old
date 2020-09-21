@@ -1,13 +1,17 @@
-We regret for the issue that you are facing, Thanks for helping us by raising an issue so that we can improve ourself to do the best.
-Mark one of the issues given below with respect to the issue you are facing with:
-- [ ] Issue facing with installation or setup of KOBman utility. 
-- [ ] Issue facing while running an environment.
-- [ ] Issue facing while adding a new environment or new file.
-- [ ] Other issues: please provide the issue in the comment box
+![image](https://user-images.githubusercontent.com/33585301/93756648-08ce1580-fc23-11ea-8b7b-79105fc63b2f.png)
 
 ____________________________________________________________________________________
 
-### Please explain the Issue / Feature Request here:
+### Please explain the query here:
 
 ____________________________________________________________________________________
-### Please provide the necessary screenshots or documents regarding the issue:
+### Please provide the necessary documents/Link regarding the query:
+
+____________________________________________________________________________________
+### Please provide the necessary screenshots regarding the query:
+
+
+
+
+
+
